@@ -1,0 +1,9 @@
+flask==2.0.1
+flask-sqlalchemy==2.5.1
+flask-migrate==3.1.0
+flask-cors==3.0.10
+flask-jwt-extended==4.3.1
+werkzeug==2.0.1
+python-dotenv==0.19.1
+passlib==1.7.4
+marshmallow==3.13.0

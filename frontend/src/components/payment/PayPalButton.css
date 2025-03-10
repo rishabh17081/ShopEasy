@@ -1,0 +1,10 @@
+/* PayPal Button Styling */
+.paypal-button-container {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Override PayPal's default styles */
+.paypal-button-container div {
+  width: 100% !important;
+}
