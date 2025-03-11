@@ -263,43 +263,16 @@ def create_mock_cards(conn, num_users):
     
     # PayPal test cards from https://developer.paypal.com/tools/sandbox/card-testing/
     paypal_test_cards = [
-        # Visa
-        {'card_type': 'Visa', 'card_number': '4111111111111111', 'expiry_date': '01/2030'},
-        {'card_type': 'Visa', 'card_number': '4012888888881881', 'expiry_date': '02/2028'},
-        {'card_type': 'Visa', 'card_number': '4917610000000000', 'expiry_date': '03/2027'},
-        {'card_type': 'Visa', 'card_number': '4662511201135750', 'expiry_date': '04/2029'},
-        {'card_type': 'Visa', 'card_number': '4012001037141112', 'expiry_date': '05/2026'},
-        
-        # Mastercard
-        {'card_type': 'Mastercard', 'card_number': '5555555555554444', 'expiry_date': '06/2028'},
-        {'card_type': 'Mastercard', 'card_number': '5105105105105100', 'expiry_date': '07/2029'},
-        {'card_type': 'Mastercard', 'card_number': '5547446442316082', 'expiry_date': '08/2027'},
-        {'card_type': 'Mastercard', 'card_number': '2221000000000009', 'expiry_date': '09/2026'},
-        {'card_type': 'Mastercard', 'card_number': '2223000048400011', 'expiry_date': '10/2028'},
-        
-        # American Express
-        {'card_type': 'Amex', 'card_number': '371449635398431', 'expiry_date': '11/2029'},
-        {'card_type': 'Amex', 'card_number': '378734493671000', 'expiry_date': '12/2028'},
-        {'card_type': 'Amex', 'card_number': '371234806987034', 'expiry_date': '01/2027'},
-        {'card_type': 'Amex', 'card_number': '376766323993095', 'expiry_date': '02/2030'},
-        
-        # Discover
-        {'card_type': 'Discover', 'card_number': '6011111111111117', 'expiry_date': '03/2026'},
-        {'card_type': 'Discover', 'card_number': '6011000990139424', 'expiry_date': '04/2027'},
-        
-        # Diners Club
-        {'card_type': 'Diners Club', 'card_number': '3056930009020004', 'expiry_date': '05/2028'},
-        {'card_type': 'Diners Club', 'card_number': '36227206271667', 'expiry_date': '06/2026'},
-        
-        # JCB
-        {'card_type': 'JCB', 'card_number': '3566002020360505', 'expiry_date': '07/2029'},
+        # Amex
+        {'card_type': 'AMEX', 'card_number': '371449635398431', 'expiry_date': '01/2030'},
+        {'card_type': 'AMEX', 'card_number': '371234806987034', 'expiry_date': '02/2028'},
     ]
     
     card_index = 0
     
-    for user_id in range(1, num_users + 1):
+    for user_id in range(1, 2):
         # Each user gets 1-3 cards
-        num_cards = random.randint(1, 3)
+        num_cards = 2
         
         for i in range(num_cards):
             # Use PayPal test cards in sequence, cycling through them
