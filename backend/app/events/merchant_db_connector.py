@@ -546,34 +546,6 @@ def getAllCardsFromDatabase_tool() -> List[Dict[str, Any]]:
     """
     return getAllCardsFromDatabase()
 
-
-def updateCardBySubscriptionId(subscription_id: str, attributes: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Update one or more attributes of a card identified by subscription ID.
-
-    Args:
-        subscription_id: Subscription ID of the card to update
-        attributes: Dictionary of attributes to update
-
-    Returns:
-        Dict[str, Any]: Success status and updated card information or error message
-    """
-    connector = get_db_connector()
-    try:
-        connector.connect()
-        
-        # First get the card by subscription ID
-        card = connector.get_card_by_subscription_id(subscription_id)
-        
-        if not card:
-            return {"success": False, "error": f"Card with subscription ID {subscription_id} not found"}
-            
-        # Now we have the card ID, we can use the existing update_card method
-        card_id = card["id"]
-        return connector.update_card(card_id, attributes)
-    finally:
-        connector.disconnect()
-
 if __name__ == "__main__":
     # This is a simple test to ensure the connector is working
     print("Testing Ecommerce Database Connector...")
