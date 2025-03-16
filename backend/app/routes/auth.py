@@ -89,9 +89,28 @@ def refresh_token():
     current_user_id = get_jwt_identity()
     access_token = create_access_token(identity=current_user_id)
     
+    print(f"Refreshed token for user ID: {current_user_id}")
+    
     return jsonify({
         "access_token": access_token
     }), 200
+
+# Special route for demo token validation
+@auth_bp.route('/validate-demo-token', methods=['GET'])
+def validate_demo_token():
+    auth_header = request.headers.get('Authorization')
+    
+    print(f"Validating demo token: {auth_header}")
+    
+    # Check if the header contains the demo token
+    if auth_header and 'Bearer demo-jwt-token' in auth_header:
+        # Return user ID 1 for John Doe
+        return jsonify({
+            "user_id": 1,
+            "message": "Demo token validated"
+        }), 200
+    
+    return jsonify({"message": "Invalid demo token"}), 401
 
 @auth_bp.route('/me', methods=['GET'])
 @jwt_required()

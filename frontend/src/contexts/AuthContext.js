@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
     // Remove user from state and localStorage
     setCurrentUser(null);
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
   };
 
   const register = (userData) => {

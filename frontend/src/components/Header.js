@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { CartContext } from '../contexts/CartContext';
@@ -6,11 +6,16 @@ import { CartContext } from '../contexts/CartContext';
 const Header = () => {
   const { currentUser, logout } = useContext(AuthContext);
   const { totalItems } = useContext(CartContext);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     navigate('/');
+  };
+
+  const toggleUserMenu = () => {
+    setShowUserMenu(!showUserMenu);
   };
 
   return (
@@ -43,19 +48,38 @@ const Header = () => {
               </Link>
             </li>
             {currentUser ? (
-              <>
-                <li className="nav-item">
-                  <span className="nav-link">Hello, {currentUser.name}</span>
-                </li>
-                <li className="nav-item">
-                  <button 
-                    className="nav-link btn btn-link" 
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </button>
-                </li>
-              </>
+              <li className="nav-item dropdown">
+                <a 
+                  className="nav-link dropdown-toggle" 
+                  href="#" 
+                  id="userDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleUserMenu();
+                  }}
+                >
+                  {currentUser.first_name || currentUser.username}
+                </a>
+                <ul className={`dropdown-menu dropdown-menu-end ${showUserMenu ? 'show' : ''}`} aria-labelledby="userDropdown">
+                  <li>
+                    <Link className="dropdown-item" to="/payment-methods">
+                      Payment Methods
+                    </Link>
+                  </li>
+                  <li><hr className="dropdown-divider" /></li>
+                  <li>
+                    <button 
+                      className="dropdown-item" 
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </li>
             ) : (
               <>
                 <li className="nav-item">

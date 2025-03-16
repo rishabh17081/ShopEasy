@@ -7,7 +7,7 @@ const dummyProducts = [
     name: 'Wireless Bluetooth Headphones',
     description: 'High-quality wireless headphones with noise cancellation technology, providing crystal clear sound and comfort for extended use.',
     price: 89.99,
-    image: 'https://via.placeholder.com/300x300?text=Headphones',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&q=80',
     category: 'Electronics',
     inventory: 25
   },
@@ -16,7 +16,7 @@ const dummyProducts = [
     name: 'Organic Cotton T-Shirt',
     description: 'Soft, comfortable t-shirt made from 100% organic cotton. Available in various colors and sizes.',
     price: 24.99,
-    image: 'https://via.placeholder.com/300x300?text=T-Shirt',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop&q=80',
     category: 'Clothing',
     inventory: 50
   },
@@ -25,7 +25,7 @@ const dummyProducts = [
     name: 'Stainless Steel Water Bottle',
     description: 'Eco-friendly, double-walled insulated water bottle that keeps your drinks cold for 24 hours or hot for 12 hours.',
     price: 29.99,
-    image: 'https://via.placeholder.com/300x300?text=Water+Bottle',
+    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&q=80',
     category: 'Home',
     inventory: 35
   },
@@ -34,7 +34,7 @@ const dummyProducts = [
     name: 'Smartphone Gimbal Stabilizer',
     description: 'Create smooth, professional-looking videos with this 3-axis smartphone gimbal. Compatible with most smartphones.',
     price: 119.99,
-    image: 'https://via.placeholder.com/300x300?text=Gimbal',
+    image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop&q=80',
     category: 'Electronics',
     inventory: 15
   },
@@ -43,43 +43,34 @@ const dummyProducts = [
     name: 'Yoga Mat',
     description: 'Non-slip, eco-friendly yoga mat with perfect cushioning for comfort during your practice.',
     price: 39.99,
-    image: 'https://via.placeholder.com/300x300?text=Yoga+Mat',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=300&fit=crop&q=80',
     category: 'Fitness',
     inventory: 40
   },
   {
     id: 6,
-    name: 'Wooden Cutting Board',
-    description: 'Handcrafted, sustainable wooden cutting board, perfect for food preparation and serving.',
-    price: 49.99,
-    image: 'https://via.placeholder.com/300x300?text=Cutting+Board',
-    category: 'Home',
-    inventory: 20
-  },
-  {
-    id: 7,
     name: 'Smartwatch',
     description: 'Track your fitness, sleep, and notifications with this sleek, feature-packed smartwatch.',
     price: 199.99,
-    image: 'https://via.placeholder.com/300x300?text=Smartwatch',
+    image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=300&h=300&fit=crop&q=80',
     category: 'Electronics',
     inventory: 18
   },
   {
-    id: 8,
+    id: 7,
     name: 'Plant-Based Protein Powder',
     description: 'Complete, plant-based protein with all essential amino acids. 25g of protein per serving.',
     price: 34.99,
-    image: 'https://via.placeholder.com/300x300?text=Protein',
+    image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=300&h=300&fit=crop&q=80',
     category: 'Fitness',
     inventory: 30
   },
   {
-    id: 9,
-    name: 'Mac book pro 14 inches ',
+    id: 8,
+    name: 'Mac book pro 14 inches',
     description: 'Mac book pro',
     price: 34.99,
-    image: 'https://via.placeholder.com/300x300?text=Protein',
+    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=300&h=300&fit=crop&q=80',
     category: 'Fitness',
     inventory: 30
   }

@@ -35,8 +35,17 @@ const Login = () => {
       const userData = {
         email,
         name: email.split('@')[0], // Just use part of the email as the name
-        id: Date.now().toString() // Generate a random ID
+        id: 1, // Use ID 1 to match the database user
+        first_name: 'John',
+        last_name: 'Doe'
       };
+      
+      // Set tokens in localStorage for API authentication
+      const demoToken = 'demo-jwt-token';
+      localStorage.setItem('accessToken', demoToken);
+      localStorage.setItem('refreshToken', 'demo-refresh-token');
+      
+      console.log('Set access token in localStorage:', demoToken);
       
       await login(userData);
       navigate(redirectPath);

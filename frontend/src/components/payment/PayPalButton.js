@@ -5,15 +5,41 @@ const PayPalButton = ({ amount, onSuccess, onError }) => {
   const paypalRef = useRef();
 
   useEffect(() => {
+    // Check if the script is already loaded to prevent duplicate loading
+    if (document.querySelector('script[src*="paypal.com/sdk/js"]')) {
+      initializePayPalButtons();
+      return;
+    }
+
     // Load the PayPal JS SDK script
     const script = document.createElement('script');
-    script.src = 'https://www.paypal.com/sdk/js?client-id=AdlchHuRCMtJU8TEV1808gahBAlgSLZJULcVEl5-sOgIwLNbIGqK6L4PvBW3v-eE8zLn9LYaLtWsIZP3&currency=USD&components=buttons&enable-funding=venmo,paylater,card';
-    script.setAttribute('data-sdk-integration-source', 'button-factory');
+    script.src = 'https://www.paypal.com/sdk/js?client-id=AYPClqv81q430Lb3nz1Ld0dMKzgIGe6n5jIOZDJMAWpZKkS3wM6R9l2wv-tmb2_O9JMbas5aiEEAwtqC&currency=USD';
     script.async = true;
 
     script.onload = () => {
-      // Initialize PayPal buttons after script loads
-      if (window.paypal) {
+      initializePayPalButtons();
+    };
+
+    script.onerror = (err) => {
+      console.error('Error loading PayPal script:', err);
+      if (onError) onError('Failed to load PayPal SDK');
+    };
+
+    document.body.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      // We should not remove the script when component unmounts
+      // as it could be used by other components or on page navigation
+    };
+  }, [amount]); // Only re-run if amount changes
+
+  const initializePayPalButtons = () => {
+    try {
+      if (window.paypal && paypalRef.current) {
+        // Clear existing buttons (if any)
+        paypalRef.current.innerHTML = '';
+
         window.paypal.Buttons({
           // Set up the transaction
           createOrder: (data, actions) => {
@@ -21,7 +47,7 @@ const PayPalButton = ({ amount, onSuccess, onError }) => {
               purchase_units: [
                 {
                   amount: {
-                    value: amount.toString(),
+                    value: Number(amount).toFixed(2),
                     currency_code: 'USD'
                   }
                 }
@@ -31,29 +57,22 @@ const PayPalButton = ({ amount, onSuccess, onError }) => {
           // Handle successful payments
           onApprove: (data, actions) => {
             return actions.order.capture().then(function(details) {
-              console.log('Transaction completed by ' + details.payer.name.given_name + '!');
-              console.log('Transaction ID: ' + data.orderID);
-              onSuccess(data, details);
+              console.log('Transaction completed!');
+              if (onSuccess) onSuccess(data, details);
             });
           },
           // Handle payment errors
           onError: (err) => {
             console.error('PayPal Error:', err);
-            onError(err);
+            if (onError) onError(err);
           }
         }).render(paypalRef.current);
       }
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      // Clean up - remove the script when component unmounts
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, [amount, onSuccess, onError]);
+    } catch (error) {
+      console.error('Error initializing PayPal buttons:', error);
+      if (onError) onError(error);
+    }
+  };
 
   return (
     <div className="paypal-button-container">

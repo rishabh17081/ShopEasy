@@ -546,10 +546,56 @@ def getAllCardsFromDatabase_tool() -> List[Dict[str, Any]]:
     """
     return getAllCardsFromDatabase()
 
+
+def update_card_by_subscription_id(subscription_id: str, attributes: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Update one or more attributes of a card identified by subscription ID.
+
+    Args:
+        subscription_id: The subscription ID of the card to update
+        attributes: Dictionary of attributes to update
+
+    Returns:
+        Dict[str, Any]: Success status and updated card information or error message
+    """
+    connector = get_db_connector()
+    try:
+        connector.connect()
+        
+        # First, get the card by subscription ID
+        card = connector.get_card_by_subscription_id(subscription_id)
+        
+        if not card:
+            print(f"Card with subscription ID {subscription_id} not found")
+            return {"success": False, "error": f"Card with subscription ID {subscription_id} not found"}
+        
+        # Update the card using the existing update_card method
+        print(f"Found card with ID {card['id']} for subscription {subscription_id}")
+        return connector.update_card(card['id'], attributes)
+    except Exception as e:
+        print(f"Error updating card by subscription ID: {str(e)}")
+        return {"success": False, "error": str(e)}
+    finally:
+        connector.disconnect()
+
+
+@mcp.tool(name="updateCardBySubscriptionId", description="Update attributes of a payment card using subscription ID in the ecommerce database")
+def update_card_by_subscription_id_tool(subscription_id: str, attributes: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Update one or more attributes of a card identified by subscription ID.
+
+    Args:
+        subscription_id: The subscription ID of the card to update
+        attributes: Dictionary of attributes to update
+
+    Returns:
+        Dict[str, Any]: Success status and updated card information or error message
+    """
+    return update_card_by_subscription_id(subscription_id, attributes)
+
 if __name__ == "__main__":
     # This is a simple test to ensure the connector is working
     print("Testing Ecommerce Database Connector...")
-    tptp()
 
     # Test database information
     db_info = get_database_info()

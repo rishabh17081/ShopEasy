@@ -15,8 +15,9 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
-    # Relationship with orders
+    # Relationships
     orders = db.relationship('Order', backref='user', lazy=True)
+    cards = db.relationship('Card', backref='user', lazy=True, cascade="all, delete-orphan")
     
     @staticmethod
     def generate_hash(password):

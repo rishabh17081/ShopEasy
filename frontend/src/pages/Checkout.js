@@ -1,13 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
+import { AuthContext } from '../contexts/AuthContext';
 import PayPalButton from '../components/payment/PayPalButton';
 import { savePaypalTransaction } from '../services/payment/paypalService';
+import { getUserCards } from '../services/payment/cardService';
 
 const Checkout = () => {
   const navigate = useNavigate();
   const { cartItems, totalPrice, clearCart } = useContext(CartContext);
+  const { currentUser } = useContext(AuthContext);
   const [paymentMethod, setPaymentMethod] = useState('credit_card');
+  const [savedCards, setSavedCards] = useState([]);
+  const [selectedCard, setSelectedCard] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,15 +22,98 @@ const Checkout = () => {
     zipCode: '',
     cardNumber: '',
     expiryDate: '',
-    cvv: ''
+    cvv: '',
+    saveCard: false
   });
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Fetch user's saved cards when component mounts
+  useEffect(() => {
+    const fetchUserCards = async () => {
+      console.log('Current user in Checkout:', currentUser);
+      console.log('Access token exists:', !!localStorage.getItem('accessToken'));
+      
+      if (currentUser && localStorage.getItem('accessToken')) {
+        setIsLoading(true);
+        try {
+          console.log('Fetching cards for user ID:', currentUser.id);
+          const response = await getUserCards(currentUser.id);
+          console.log('getUserCards response:', response);
+          
+          if (response.success) {
+            console.log('Setting saved cards:', response.data);
+            setSavedCards(response.data);
+            
+            if (response.data.length === 0) {
+              console.warn('No cards returned from API even though user should have cards');
+            }
+          } else {
+            // Handle the case where the API call was not successful
+            console.error('Failed to fetch saved cards:', response.error);
+            setSavedCards([]);
+          }
+        } catch (error) {
+          console.error('Exception fetching saved cards:', error);
+          // Don't let API interceptor redirect, just handle the error here
+          setSavedCards([]);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        // User is not authenticated, just set empty cards array
+        console.log('User not authenticated, setting empty cards array');
+        setSavedCards([]);
+      }
+    };
+
+    fetchUserCards();
+  }, [currentUser]);
+
+  // Prefill form data from user's profile if logged in
+  useEffect(() => {
+    if (currentUser) {
+      setFormData(prevState => ({
+        ...prevState,
+        firstName: currentUser.first_name || '',
+        lastName: currentUser.last_name || '',
+        email: currentUser.email || ''
+      }));
+    }
+  }, [currentUser]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
+  };
+
+  const handleCardSelection = (e) => {
+    const cardId = e.target.value;
+    setSelectedCard(cardId);
+    
+    if (cardId === 'new') {
+      // Clear card fields if "Use new card" is selected
+      setFormData(prevState => ({
+        ...prevState,
+        cardNumber: '',
+        expiryDate: '',
+        cvv: ''
+      }));
+    } else {
+      // Find the selected card and prefill form data
+      const card = savedCards.find(c => c.id.toString() === cardId);
+      if (card) {
+        setFormData(prevState => ({
+          ...prevState,
+          cardNumber: `**** **** **** ${card.last_four}`,
+          expiryDate: card.expiry_date,
+          // CVV is a security field and should not be prefilled
+          cvv: ''
+        }));
+      }
+    }
   };
 
   const calculateTotal = () => {
@@ -37,7 +125,13 @@ const Checkout = () => {
     
     if (paymentMethod === 'credit_card') {
       // Process credit card payment
-      console.log('Processing credit card payment with data:', formData);
+      console.log('Processing credit card payment with data:', {
+        ...formData,
+        selectedCard: selectedCard !== 'new' ? selectedCard : 'New card'
+      });
+      
+      // In a real implementation, you'd send this data to your backend
+      // and handle payment processing
       
       // Clear the cart and navigate to order confirmation
       clearCart();
@@ -218,37 +312,81 @@ const Checkout = () => {
               </div>
             </div>
             
-            {paymentMethod === 'credit_card' ? (
+            {paymentMethod === 'credit_card' && (
               <>
-                <div className="mb-3">
-                  <label htmlFor="cardNumber" className="form-label">Card Number</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cardNumber"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleChange}
-                    placeholder="XXXX XXXX XXXX XXXX"
-                    required={paymentMethod === 'credit_card'}
-                  />
-                </div>
-                
-                <div className="row mb-3">
-                  <div className="col">
-                    <label htmlFor="expiryDate" className="form-label">Expiry Date</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="expiryDate"
-                      name="expiryDate"
-                      value={formData.expiryDate}
-                      onChange={handleChange}
-                      placeholder="MM/YY"
-                      required={paymentMethod === 'credit_card'}
-                    />
+                {/* Card Selection Dropdown for existing users */}
+                {currentUser && savedCards.length > 0 && (
+                  <div className="mb-3">
+                    <label htmlFor="savedCards" className="form-label">Select Payment Method</label>
+                    <select
+                      className="form-select"
+                      id="savedCards"
+                      value={selectedCard}
+                      onChange={handleCardSelection}
+                      required
+                    >
+                      <option value="">Select a card</option>
+                      {savedCards.map(card => (
+                        <option key={card.id} value={card.id.toString()}>
+                          {card.card_type} **** {card.last_four} | Expires: {card.expiry_date} {card.is_default ? '(Default)' : ''}
+                        </option>
+                      ))}
+                      <option value="new">+ Use a new card</option>
+                    </select>
                   </div>
-                  <div className="col">
+                )}
+
+                {/* Show card form if no saved cards, not logged in, or "new card" is selected */}
+                {(!currentUser || savedCards.length === 0 || selectedCard === 'new') && (
+                  <>
+                    <div className="mb-3">
+                      <label htmlFor="cardNumber" className="form-label">Card Number</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="cardNumber"
+                        name="cardNumber"
+                        value={formData.cardNumber}
+                        onChange={handleChange}
+                        placeholder="XXXX XXXX XXXX XXXX"
+                        required={paymentMethod === 'credit_card' && (!currentUser || selectedCard === 'new' || savedCards.length === 0)}
+                      />
+                    </div>
+                    
+                    <div className="row mb-3">
+                      <div className="col">
+                        <label htmlFor="expiryDate" className="form-label">Expiry Date</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="expiryDate"
+                          name="expiryDate"
+                          value={formData.expiryDate}
+                          onChange={handleChange}
+                          placeholder="MM/YY"
+                          required={paymentMethod === 'credit_card' && (!currentUser || selectedCard === 'new' || savedCards.length === 0)}
+                        />
+                      </div>
+                      <div className="col">
+                        <label htmlFor="cvv" className="form-label">CVV</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="cvv"
+                          name="cvv"
+                          value={formData.cvv}
+                          onChange={handleChange}
+                          placeholder="123"
+                          required={paymentMethod === 'credit_card'}
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {/* CVV field is always required for saved cards for security */}
+                {currentUser && selectedCard !== 'new' && selectedCard !== '' && (
+                  <div className="mb-3">
                     <label htmlFor="cvv" className="form-label">CVV</label>
                     <input
                       type="text"
@@ -261,11 +399,30 @@ const Checkout = () => {
                       required={paymentMethod === 'credit_card'}
                     />
                   </div>
-                </div>
+                )}
+
+                {/* Option to save card for logged in users */}
+                {currentUser && selectedCard === 'new' && (
+                  <div className="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="saveCard"
+                      name="saveCard"
+                      checked={formData.saveCard}
+                      onChange={handleChange}
+                    />
+                    <label className="form-check-label" htmlFor="saveCard">
+                      Save this card for future purchases
+                    </label>
+                  </div>
+                )}
                 
                 <button type="submit" className="btn btn-primary mt-4">Place Order</button>
               </>
-            ) : (
+            )}
+            
+            {paymentMethod === 'paypal' && (
               <div className="mt-4">
                 <p>Click the PayPal button below to complete your payment:</p>
                 <PayPalButton 
