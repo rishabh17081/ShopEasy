@@ -99,3 +99,39 @@ export const deleteCard = async (userId, cardId) => {
     throw error;
   }
 };
+
+// Update a payment card
+export const updateCard = async (userId, cardId, cardData) => {
+  try {
+    console.log('Updating card:', userId, cardId, cardData);
+    
+    // Format the data for the API
+    const apiCardData = {};
+    
+    // Only include fields that are provided
+    if (cardData.expiryDate) {
+      apiCardData.expiry_date = cardData.expiryDate;
+    }
+    
+    if (cardData.cardholderName) {
+      apiCardData.cardholder_name = cardData.cardholderName;
+    }
+    
+    if (cardData.isDefault !== undefined) {
+      apiCardData.is_default = cardData.isDefault;
+    }
+    
+    // Make the API call to update the card
+    const response = await api.put(`${API_URL}/user/cards/${cardId}`, apiCardData);
+    console.log('Update card response:', response.data);
+    
+    return {
+      success: true,
+      message: 'Card updated successfully',
+      data: response.data
+    };
+  } catch (error) {
+    console.error('Error updating card:', error);
+    throw error;
+  }
+};

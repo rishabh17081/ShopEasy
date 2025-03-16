@@ -69,7 +69,7 @@ VALUES (1, 'AMEX', '371449635398431', '8431', '01/2030', 'John Doe', 1, NULL, '2
 
 cursor.execute('''
 INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, subscription_id, created_at)
-VALUES (1, 'AMEX', '371234806987034', '7034', '01/2032', 'John Doe', 0, NULL, '2025-03-11 17:29:21')
+VALUES (1, 'AMEX', '371234806987034', '7034', '01/2024', 'John Doe', 0, NULL, '2025-03-11 17:29:21')
 ''')
 
 print("Sample cards data inserted for John Doe (user_id = 1)")

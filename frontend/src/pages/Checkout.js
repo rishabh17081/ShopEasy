@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import { AuthContext } from '../contexts/AuthContext';
 import PayPalButton from '../components/payment/PayPalButton';
 import { savePaypalTransaction } from '../services/payment/paypalService';
-import { getUserCards } from '../services/payment/cardService';
+import { getUserCards, updateCard } from '../services/payment/cardService';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -105,6 +105,8 @@ const Checkout = () => {
       // Find the selected card and prefill form data
       const card = savedCards.find(c => c.id.toString() === cardId);
       if (card) {
+        // For existing cards, we'll show the last four digits but allow editing
+        // In a real app, you might want to validate any changes to the card number
         setFormData(prevState => ({
           ...prevState,
           cardNumber: `**** **** **** ${card.last_four}`,
@@ -120,22 +122,44 @@ const Checkout = () => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (paymentMethod === 'credit_card') {
-      // Process credit card payment
-      console.log('Processing credit card payment with data:', {
-        ...formData,
-        selectedCard: selectedCard !== 'new' ? selectedCard : 'New card'
-      });
-      
-      // In a real implementation, you'd send this data to your backend
-      // and handle payment processing
-      
-      // Clear the cart and navigate to order confirmation
-      clearCart();
-      navigate('/order-confirmation');
+      try {
+        // If using an existing card and the data has changed, update the card
+        if (selectedCard && selectedCard !== 'new' && currentUser) {
+          const card = savedCards.find(c => c.id.toString() === selectedCard);
+          
+          // Check if card data has been modified
+          if (card && formData.expiryDate !== card.expiry_date) {
+            console.log('Updating card with new information');
+            
+            // Update the card with new information
+            await updateCard(currentUser.id, selectedCard, {
+              expiryDate: formData.expiryDate
+            });
+            
+            console.log('Card updated successfully');
+          }
+        }
+        
+        // Process credit card payment
+        console.log('Processing credit card payment with data:', {
+          ...formData,
+          selectedCard: selectedCard !== 'new' ? selectedCard : 'New card'
+        });
+        
+        // In a real implementation, you'd send this data to your backend
+        // and handle payment processing
+        
+        // Clear the cart and navigate to order confirmation
+        clearCart();
+        navigate('/order-confirmation');
+      } catch (error) {
+        console.error('Error processing payment:', error);
+        alert('There was an error processing your payment. Please try again.');
+      }
     }
     // PayPal is handled separately by the PayPal component
   };
@@ -384,21 +408,53 @@ const Checkout = () => {
                   </>
                 )}
 
-                {/* CVV field is always required for saved cards for security */}
+                {/* For saved cards, show editable fields */}
                 {currentUser && selectedCard !== 'new' && selectedCard !== '' && (
-                  <div className="mb-3">
-                    <label htmlFor="cvv" className="form-label">CVV</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="cvv"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleChange}
-                      placeholder="123"
-                      required={paymentMethod === 'credit_card'}
-                    />
-                  </div>
+                  <>
+                    <div className="mb-3">
+                      <label htmlFor="cardNumber" className="form-label">Card Number</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="cardNumber"
+                        name="cardNumber"
+                        value={formData.cardNumber}
+                        onChange={handleChange}
+                        placeholder="XXXX XXXX XXXX XXXX"
+                        required={paymentMethod === 'credit_card'}
+                        disabled={true} // Card number is not editable for security reasons
+                      />
+                      <small className="text-muted">For security reasons, you cannot edit the card number.</small>
+                    </div>
+                    
+                    <div className="mb-3">
+                      <label htmlFor="expiryDate" className="form-label">Expiry Date</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="expiryDate"
+                        name="expiryDate"
+                        value={formData.expiryDate}
+                        onChange={handleChange}
+                        placeholder="MM/YY"
+                        required={paymentMethod === 'credit_card'}
+                      />
+                    </div>
+                    
+                    <div className="mb-3">
+                      <label htmlFor="cvv" className="form-label">CVV</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="cvv"
+                        name="cvv"
+                        value={formData.cvv}
+                        onChange={handleChange}
+                        placeholder="123"
+                        required={paymentMethod === 'credit_card'}
+                      />
+                    </div>
+                  </>
                 )}
 
                 {/* Option to save card for logged in users */}
