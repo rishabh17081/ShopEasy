@@ -120,7 +120,6 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
               <div>
                 <div className="mb-1">
                   <span className="fw-bold">{card.card_type}</span>
-                  {card.is_default && <span className="badge bg-success ms-2">Default</span>}
                 </div>
                 <div>**** **** **** {card.last_four}</div>
                 <div className="text-muted small">
