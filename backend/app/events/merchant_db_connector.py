@@ -11,8 +11,7 @@ mcp = FastMCP(name="E-commerce Database Connector")
 class DatabaseConnector:
     """SQLite database connector for the e-commerce database."""
 
-    def __init__(self, db_path: Optional[
-        str] = "/Users/rishabhsharma/PycharmProjects/ecommerce-site/scripts/db/ecommerce.db"):
+    def __init__(self, db_path: Optional[str] = None):
         """
         Initialize the connector with the path to the database.
 
@@ -20,8 +19,9 @@ class DatabaseConnector:
             db_path: Path to the SQLite database. If None, uses default path.
         """
         if db_path is None:
-            # Default path relative to the ecommerce site
-            self.db_path = "/Users/rishabhsharma/PycharmProjects/ecommerce-site/scripts/db/ecommerce.db"
+            # Default path relative to the ecommerce site - use the same database as the main application
+            self.db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
+                                       'instance', 'ecommerce.db')
         else:
             self.db_path = db_path
 
@@ -628,6 +628,3 @@ if __name__ == "__main__":
             print("No payment cards found")
 
     print("\nTest complete.")
-
-
-

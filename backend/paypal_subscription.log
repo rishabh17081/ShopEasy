@@ -488,3 +488,29 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2025-03-17 14:06:47,230 - werkzeug - INFO -  * Restarting with stat
 2025-03-17 14:08:27,910 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/__init__.py', reloading
 2025-03-17 14:08:27,958 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 14:18:13,517 - __main__ - INFO - Starting PayPal AU subscription process for all cards
+2025-03-17 14:18:13,606 - __main__ - INFO - Found 2 cards without PayPal AU subscriptions
+2025-03-17 14:18:13,606 - __main__ - INFO - Creating PayPal AU subscription for card: ***********8431, expiry: 2030-01
+2025-03-17 14:18:13,606 - __main__ - INFO - Successfully created PayPal AU subscription: SUB-19E07A01FF2E
+2025-03-17 14:18:13,607 - __main__ - INFO - Updated card ID 1 with subscription ID: SUB-19E07A01FF2E
+2025-03-17 14:18:13,607 - __main__ - INFO - Creating PayPal AU subscription for card: ***********7034, expiry: 2024-01
+2025-03-17 14:18:13,607 - __main__ - INFO - Successfully created PayPal AU subscription: SUB-DA08BE47D770
+2025-03-17 14:18:13,607 - __main__ - INFO - Updated card ID 2 with subscription ID: SUB-DA08BE47D770
+2025-03-17 14:18:13,607 - __main__ - INFO - Subscription process completed: 2 succeeded, 0 failed
+2025-03-17 14:18:13,607 - __main__ - INFO - Subscription process summary: {
+  "total": 2,
+  "success": 2,
+  "failed": 0,
+  "details": [
+    {
+      "card_id": 1,
+      "status": "success",
+      "subscription_id": "SUB-19E07A01FF2E"
+    },
+    {
+      "card_id": 2,
+      "status": "success",
+      "subscription_id": "SUB-DA08BE47D770"
+    }
+  ]
+}

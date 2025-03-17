@@ -1,5 +1,7 @@
 import json
 import logging
+import sys
+import os
 from typing import Dict, Any, Optional
 from fastapi import FastAPI, Request, Depends, Header
 from fastapi.responses import JSONResponse
@@ -7,23 +9,26 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 # Setup logging
+# Get the directory of this file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Create an absolute path for the log file
+log_file = os.path.join(current_dir, "webhook_notifications.log")
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("webhook_notifications.log"),
+        logging.FileHandler(log_file),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
 # Import the database connector function
-import sys
-import os
 
 # Add the parent directory to the path to import the merchant_db_connector
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from merchant_db_connector import update_card_by_subscription_id
+from app.events.merchant_db_connector import update_card_by_subscription_id
 
 # Environment variables (in production, use proper environment variable handling)
 WEBHOOK_SECRET = os.environ.get("PAYPAL_WEBHOOK_SECRET", "your_webhook_secret_here")
@@ -254,7 +259,7 @@ if __name__ == "__main__":
     
     # Run the FastAPI app with Uvicorn
     uvicorn.run(
-        "webhook_card_update:app", 
+        "app.events.webhook_card_update:app", 
         host=host, 
         port=port, 
         reload=True,  # Enable auto-reload for development

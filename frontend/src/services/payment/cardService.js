@@ -2,7 +2,7 @@ import axios from 'axios';
 import api from '../../services/api';
 
 // Use the API URL from environment variables or default to relative path
-const API_URL = 'http://10.0.0.146:5001/api';
+const API_URL = 'http://192.0.0.2:5001/api';
 
 // Get all payment cards for the current user
 export const getUserCards = async (userId) => {
