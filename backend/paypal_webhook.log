@@ -1,0 +1,9 @@
+2025-03-17 00:41:33,841 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
+2025-03-17 00:41:33,939 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:41:38,052 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
+2025-03-17 00:41:38,104 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:41:38,106 - __main__ - ERROR - Error starting webhook server: [Errno 48] Address already in use
+2025-03-17 00:42:09,651 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
+2025-03-17 00:42:09,728 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:42:09,908 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
+2025-03-17 00:42:09,959 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
