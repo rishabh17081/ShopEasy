@@ -514,3 +514,87 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
     }
   ]
 }
+2025-03-17 19:21:27,766 - __main__ - INFO - Starting PayPal AU subscription process for all cards
+2025-03-17 19:21:27,848 - __main__ - INFO - Found 2 cards without PayPal AU subscriptions
+2025-03-17 19:21:27,848 - __main__ - INFO - Creating PayPal AU subscription for card: ***********8431, expiry: 2030-01
+2025-03-17 19:21:28,101 - __main__ - ERROR - Error calling PayPal AU MCP tool: Traceback (most recent call last):
+  File "<string>", line 7, in <module>
+TypeError: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+
+2025-03-17 19:21:28,102 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 1
+2025-03-17 19:21:28,102 - __main__ - INFO - Creating PayPal AU subscription for card: ***********7034, expiry: 2024-01
+2025-03-17 19:21:28,300 - __main__ - ERROR - Error calling PayPal AU MCP tool: Traceback (most recent call last):
+  File "<string>", line 7, in <module>
+TypeError: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+
+2025-03-17 19:21:28,300 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 2
+2025-03-17 19:21:28,301 - __main__ - INFO - Subscription process completed: 0 succeeded, 2 failed
+2025-03-17 19:21:28,301 - __main__ - INFO - Subscription process summary: {
+  "total": 2,
+  "success": 0,
+  "failed": 2,
+  "details": [
+    {
+      "card_id": 1,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    },
+    {
+      "card_id": 2,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    }
+  ]
+}
+2025-03-17 19:22:29,305 - __main__ - INFO - Starting PayPal AU subscription process for all cards
+2025-03-17 19:22:29,388 - __main__ - INFO - Found 2 cards without PayPal AU subscriptions
+2025-03-17 19:22:29,388 - __main__ - INFO - Creating PayPal AU subscription for card: ***********8431, expiry: 2030-01
+2025-03-17 19:22:29,514 - __main__ - ERROR - Error creating PayPal AU subscription: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+2025-03-17 19:22:29,514 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 1
+2025-03-17 19:22:29,514 - __main__ - INFO - Creating PayPal AU subscription for card: ***********7034, expiry: 2024-01
+2025-03-17 19:22:29,514 - __main__ - ERROR - Error creating PayPal AU subscription: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+2025-03-17 19:22:29,514 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 2
+2025-03-17 19:22:29,514 - __main__ - INFO - Subscription process completed: 0 succeeded, 2 failed
+2025-03-17 19:22:29,514 - __main__ - INFO - Subscription process summary: {
+  "total": 2,
+  "success": 0,
+  "failed": 2,
+  "details": [
+    {
+      "card_id": 1,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    },
+    {
+      "card_id": 2,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    }
+  ]
+}
+2025-03-17 19:23:47,841 - __main__ - INFO - Starting PayPal AU subscription process for all cards
+2025-03-17 19:23:47,918 - __main__ - INFO - Found 2 cards without PayPal AU subscriptions
+2025-03-17 19:23:47,918 - __main__ - INFO - Creating PayPal AU subscription for card: ***********8431, expiry: 2030-01
+2025-03-17 19:23:48,105 - __main__ - ERROR - Error creating PayPal AU subscription: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+2025-03-17 19:23:48,105 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 1
+2025-03-17 19:23:48,105 - __main__ - INFO - Creating PayPal AU subscription for card: ***********7034, expiry: 2024-01
+2025-03-17 19:23:48,105 - __main__ - ERROR - Error creating PayPal AU subscription: FastMCP.call_tool() takes 3 positional arguments but 4 were given
+2025-03-17 19:23:48,105 - __main__ - WARNING - Failed to create PayPal AU subscription for card ID 2
+2025-03-17 19:23:48,105 - __main__ - INFO - Subscription process completed: 0 succeeded, 2 failed
+2025-03-17 19:23:48,105 - __main__ - INFO - Subscription process summary: {
+  "total": 2,
+  "success": 0,
+  "failed": 2,
+  "details": [
+    {
+      "card_id": 1,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    },
+    {
+      "card_id": 2,
+      "status": "failed",
+      "reason": "Subscription creation failed"
+    }
+  ]
+}

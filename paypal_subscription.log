@@ -1,0 +1,125 @@
+2025-03-17 00:33:39,339 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:33:39,342 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 00:33:39,343 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:33:39,540 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:33:39,541 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:33:39,548 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:33:51,485 - __main__ - INFO - Received PayPal webhook event: WH-B208255397DE
+2025-03-17 00:33:51,485 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 00:33:51,485 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 00:33:51,485 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 00:33:51,485 - __main__ - INFO - New expiry date: 2029-01
+2025-03-17 00:33:51,485 - __main__ - INFO - Converted expiry date from 2029-01 to 01/2029
+2025-03-17 00:33:51,485 - app.events.merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:33:51,485 - app.events.merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2029'}
+2025-03-17 00:33:51,499 - app.events.merchant_db_connector - ERROR - Database error updating card: (sqlite3.OperationalError) cannot commit transaction - SQL statements in progress
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-03-17 00:33:51,499 - __main__ - WARNING - No card found with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:33:51,500 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 00:33:51] "POST /webhooks/card-updated HTTP/1.1" 200 -
+2025-03-17 00:34:28,667 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/events/merchant_db_connector.py', reloading
+2025-03-17 00:34:28,718 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:34:29,005 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:34:29,008 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:34:29,017 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:34:36,152 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:34:36,155 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 00:34:36,155 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:34:36,354 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:34:36,355 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:34:36,366 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:34:41,319 - __main__ - INFO - Received PayPal webhook event: WH-165A22D8192B
+2025-03-17 00:34:41,319 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 00:34:41,319 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 00:34:41,319 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 00:34:41,319 - __main__ - INFO - New expiry date: 2029-01
+2025-03-17 00:34:41,319 - __main__ - INFO - Converted expiry date from 2029-01 to 01/2029
+2025-03-17 00:34:41,319 - app.events.merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:34:41,319 - app.events.merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2029'}
+2025-03-17 00:34:41,327 - app.events.merchant_db_connector - ERROR - Database error updating card: (sqlite3.OperationalError) cannot commit transaction - SQL statements in progress
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-03-17 00:34:41,327 - __main__ - WARNING - No card found with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:34:41,327 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 00:34:41] "POST /webhooks/card-updated HTTP/1.1" 200 -
+2025-03-17 00:35:10,865 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/events/webhook_card_update.py', reloading
+2025-03-17 00:35:10,918 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:35:11,137 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:35:11,139 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:35:11,145 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:35:17,427 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/events/webhook_card_update.py', reloading
+2025-03-17 00:35:17,484 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:35:17,699 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:35:17,700 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:35:17,707 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:38:44,418 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:38:44,422 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 00:38:44,422 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:38:44,632 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:38:44,633 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:38:44,642 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:38:48,370 - __main__ - INFO - Received PayPal webhook event: WH-5EF9D013D554
+2025-03-17 00:38:48,370 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 00:38:48,370 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 00:38:48,370 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 00:38:48,370 - __main__ - INFO - New expiry date: 2029-01
+2025-03-17 00:38:48,370 - __main__ - INFO - Converted expiry date from 2029-01 to 01/2029
+2025-03-17 00:38:48,370 - merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:38:48,370 - merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2029'}
+2025-03-17 00:38:48,382 - merchant_db_connector - ERROR - Database error updating card: (sqlite3.OperationalError) cannot commit transaction - SQL statements in progress
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-03-17 00:38:48,382 - __main__ - WARNING - No card found with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:38:48,382 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 00:38:48] "POST /webhooks/card-updated HTTP/1.1" 200 -
+2025-03-17 00:58:25,811 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:58:25,814 - __main__ - ERROR - Error starting webhook server: [Errno 48] Address already in use
+2025-03-17 00:58:56,346 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:58:56,348 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 00:58:56,349 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 00:58:56,541 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 00:58:56,542 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 00:58:56,554 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 00:59:16,516 - __main__ - INFO - Received PayPal webhook event: WH-05E19D4FC213
+2025-03-17 00:59:16,516 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 00:59:16,516 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 00:59:16,516 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 00:59:16,516 - __main__ - INFO - New expiry date: 2029-01
+2025-03-17 00:59:16,516 - __main__ - INFO - Converted expiry date from 2029-01 to 01/2029
+2025-03-17 00:59:16,518 - app.events.merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:59:16,518 - app.events.merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2029'}
+2025-03-17 00:59:16,518 - app.events.merchant_db_connector - INFO - Using database at: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-17 00:59:16,519 - app.events.merchant_db_connector - INFO - Successfully updated card with ID: 2
+2025-03-17 00:59:16,519 - __main__ - INFO - Successfully updated card with subscription ID: SUB-2581B875F0A7
+2025-03-17 00:59:16,519 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 00:59:16] "POST /webhooks/card-updated HTTP/1.1" 200 -
+2025-03-17 01:11:03,515 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 01:11:03,518 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 01:11:03,519 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 01:11:03,725 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 01:11:03,727 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 01:11:03,736 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 01:11:30,964 - __main__ - INFO - Received PayPal webhook event: WH-REAL-EVENT-12345
+2025-03-17 01:11:30,964 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 01:11:30,964 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 01:11:30,964 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 01:11:30,964 - __main__ - INFO - New expiry date: 01/2024
+2025-03-17 01:11:30,964 - __main__ - ERROR - Error formatting expiry date: not enough values to unpack (expected 2, got 1)
+2025-03-17 01:11:30,966 - app.events.merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 01:11:30,966 - app.events.merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2024'}
+2025-03-17 01:11:30,966 - app.events.merchant_db_connector - INFO - Using database at: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-17 01:11:30,967 - app.events.merchant_db_connector - INFO - Successfully updated card with ID: 2
+2025-03-17 01:11:30,967 - __main__ - INFO - Successfully updated card with subscription ID: SUB-2581B875F0A7
+2025-03-17 01:11:30,968 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 01:11:30] "POST /webhooks/card-updated HTTP/1.1" 200 -
+2025-03-17 01:13:19,531 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 01:13:19,534 - werkzeug - INFO -  * Running on http://localhost:8000/ (Press CTRL+C to quit)
+2025-03-17 01:13:19,535 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 01:13:19,729 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-17 01:13:19,731 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 01:13:19,740 - werkzeug - INFO -  * Debugger PIN: 471-105-927
+2025-03-17 01:13:41,839 - __main__ - INFO - Received PayPal webhook event: WH-403300B90DBF
+2025-03-17 01:13:41,840 - __main__ - INFO - Event type: CARD.UPDATED
+2025-03-17 01:13:41,840 - __main__ - INFO - Processing card update for subscription: SUB-2581B875F0A7
+2025-03-17 01:13:41,840 - __main__ - INFO - Update type: EXPIRY_UPDATE
+2025-03-17 01:13:41,840 - __main__ - INFO - New expiry date: 2029-01
+2025-03-17 01:13:41,840 - __main__ - INFO - Converted expiry date from 2029-01 to 01/2029
+2025-03-17 01:13:41,846 - app.events.merchant_db_connector - INFO - Updating card with subscription ID: SUB-2581B875F0A7
+2025-03-17 01:13:41,846 - app.events.merchant_db_connector - INFO - Attributes to update: {'expiry_date': '01/2029'}
+2025-03-17 01:13:41,846 - app.events.merchant_db_connector - INFO - Using database at: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-17 01:13:41,847 - app.events.merchant_db_connector - INFO - Successfully updated card with ID: 2
+2025-03-17 01:13:41,847 - __main__ - INFO - Successfully updated card with subscription ID: SUB-2581B875F0A7
+2025-03-17 01:13:41,848 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 01:13:41] "POST /webhooks/card-updated HTTP/1.1" 200 -

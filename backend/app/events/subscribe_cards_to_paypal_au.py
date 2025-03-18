@@ -29,30 +29,33 @@ def create_paypal_subscription(card_number, expiry_date):
         dict: The created subscription details or None if creation failed
     """
     try:
-        # In a real implementation, this would make an API call to PayPal
-        # For this example, we'll simulate a successful response
-        
         # Log the request (mask the card number for security)
         masked_card = f"{'*' * (len(card_number) - 4)}{card_number[-4:]}"
         logger.info(f"Creating PayPal AU subscription for card: {masked_card}, expiry: {expiry_date}")
         
-        # Generate a fake subscription ID
-        import uuid
-        subscription_id = f"SUB-{uuid.uuid4().hex[:12].upper()}"
+        # Use the PayPal AU Subscription Connector MCP server to create a real subscription
+        from fastmcp import FastMCP
         
-        # Simulate a successful response
-        response = {
-            "id": subscription_id,
-            "status": "ACTIVE",
-            "create_time": datetime.utcnow().isoformat(),
-            "card_details": {
-                "last_four": card_number[-4:],
+        # Create a FastMCP client
+        mcp = FastMCP()
+        
+        # Call the create_subscription tool
+        response = mcp.call_tool(
+            "PayPal AU Subscription Connector",
+            "create_subscription",
+            {
+                "pan": card_number,
                 "expiry_date": expiry_date
             }
-        }
+        )
         
-        logger.info(f"Successfully created PayPal AU subscription: {subscription_id}")
-        return response
+        if response and 'id' in response:
+            subscription_id = response['id']
+            logger.info(f"Successfully created PayPal AU subscription: {subscription_id}")
+            return response
+        else:
+            logger.error(f"Invalid response from PayPal AU MCP tool: {response}")
+            return None
         
     except Exception as e:
         logger.error(f"Error creating PayPal AU subscription: {str(e)}")
