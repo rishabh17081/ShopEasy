@@ -1,44 +1,80 @@
 import axios from 'axios';
+import { getAuthToken } from '../api';
 
-// This is a utility service for handling PayPal related operations
-// You might want to connect this to your backend API in a real application
+const BASE_URL = '/api/cards';
 
-export const savePaypalTransaction = async (transactionData) => {
-  try {
-    // In a real app, you would send this data to your backend
-    // return await axios.post('/api/payments/paypal', transactionData);
-    
-    // For now, we'll just simulate a successful API call
-    console.log('Saving PayPal transaction:', transactionData);
-    return {
-      success: true,
-      message: 'Transaction saved successfully',
-      data: transactionData
-    };
-  } catch (error) {
-    console.error('Error saving PayPal transaction:', error);
-    throw error;
-  }
-};
+export const PayPalService = {
+  /**
+   * Update the PayPal subscription ID for a specific card
+   * @param {number} cardId - The ID of the card
+   * @param {string} subscriptionId - The PayPal subscription ID
+   * @returns {Promise} - Resolves with the updated card information
+   */
+  updateCardSubscription: async (cardId, subscriptionId) => {
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/update_subscription`, 
+        { card_id: cardId, subscription_id: subscriptionId },
+        {
+          headers: {
+            'Authorization': `Bearer ${getAuthToken()}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Error updating card subscription:', error);
+      throw error;
+    }
+  },
 
-export const verifyPaypalPayment = async (paymentId) => {
-  try {
-    // In a real app, you would verify this payment with your backend
-    // return await axios.get(`/api/payments/paypal/verify/${paymentId}`);
-    
-    // For now, we'll just simulate a successful verification
-    console.log('Verifying PayPal payment:', paymentId);
-    return {
-      success: true,
-      message: 'Payment verified successfully',
-      data: {
-        paymentId,
-        status: 'COMPLETED',
-        verifiedAt: new Date().toISOString()
-      }
-    };
-  } catch (error) {
-    console.error('Error verifying PayPal payment:', error);
-    throw error;
+  /**
+   * Retrieve the subscription ID for a specific card
+   * @param {number} cardId - The ID of the card
+   * @returns {Promise} - Resolves with the card's subscription ID
+   */
+  getCardSubscription: async (cardId) => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/subscription`, 
+        {
+          params: { card_id: cardId },
+          headers: {
+            'Authorization': `Bearer ${getAuthToken()}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Error retrieving card subscription:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Create a PayPal subscription for a card
+   * @param {string} pan - Primary Account Number (card number)
+   * @param {string} expiryDate - Card expiry date in YYYY-MM format
+   * @returns {Promise} - Resolves with the subscription details
+   */
+  createCardSubscription: async (pan, expiryDate) => {
+    try {
+      const response = await axios.post(
+        '/api/paypal/create_subscription', 
+        { pan, expiry_date: expiryDate },
+        {
+          headers: {
+            'Authorization': `Bearer ${getAuthToken()}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Error creating card subscription:', error);
+      throw error;
+    }
   }
 };

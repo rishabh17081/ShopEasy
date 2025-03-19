@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import { AuthContext } from '../contexts/AuthContext';
 import PayPalButton from '../components/payment/PayPalButton';
 import { savePaypalTransaction } from '../services/payment/paypalService';
-import { getUserCards, updateCard } from '../services/payment/cardService';
+import { getUserCards, updateCard, saveCard } from '../services/payment/cardService';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Checkout = () => {
     cardNumber: '',
     expiryDate: '',
     cvv: '',
-    saveCard: false
+    saveCard: true // Default to true for better user experience
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -119,7 +119,24 @@ const Checkout = () => {
   };
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
+    try {
+      if (!cartItems || !Array.isArray(cartItems)) {
+        console.error("Invalid cart items:", cartItems);
+        return "0.00";
+      }
+      
+      return cartItems.reduce((total, item) => {
+        // Validate item data
+        if (!item || typeof item.price !== 'number' || typeof item.quantity !== 'number') {
+          console.error("Invalid item in cart:", item);
+          return total;
+        }
+        return total + (item.price * item.quantity);
+      }, 0).toFixed(2);
+    } catch (error) {
+      console.error("Error calculating total:", error);
+      return "0.00";
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -141,6 +158,34 @@ const Checkout = () => {
             });
             
             console.log('Card updated successfully');
+          }
+        }
+        
+        // If using a new card and the user wants to save it, save the card
+        if (currentUser && (selectedCard === 'new' || !savedCards.length) && formData.saveCard) {
+          console.log('Saving new card for future use');
+          
+          try {
+            // Format the card data for saving
+            const cardData = {
+              cardNumber: formData.cardNumber,
+              expiryDate: formData.expiryDate,
+              cvv: formData.cvv,
+              cardholderName: `${formData.firstName} ${formData.lastName}`,
+              isDefault: false // Don't make it default automatically
+            };
+            
+            // Save the card
+            const saveResponse = await saveCard(currentUser.id, cardData);
+            
+            if (saveResponse.success) {
+              console.log('Card saved successfully:', saveResponse.data);
+            } else {
+              console.error('Failed to save card:', saveResponse.error);
+            }
+          } catch (saveError) {
+            console.error('Error saving card:', saveError);
+            // Continue with payment even if card saving fails
           }
         }
         
@@ -199,7 +244,6 @@ const Checkout = () => {
 
   const handlePayPalError = (error) => {
     console.error('PayPal payment error:', error);
-    alert('There was an error processing your PayPal payment. Please try again.');
   };
 
   if (cartItems.length === 0) {
@@ -387,7 +431,7 @@ const Checkout = () => {
                           name="expiryDate"
                           value={formData.expiryDate}
                           onChange={handleChange}
-                          placeholder="MM/YY"
+                          placeholder="MM/YYYY"
                           required={paymentMethod === 'credit_card' && (!currentUser || selectedCard === 'new' || savedCards.length === 0)}
                         />
                       </div>
@@ -436,7 +480,7 @@ const Checkout = () => {
                         name="expiryDate"
                         value={formData.expiryDate}
                         onChange={handleChange}
-                        placeholder="MM/YY"
+                        placeholder="MM/YYYY"
                         required={paymentMethod === 'credit_card'}
                       />
                     </div>
@@ -458,7 +502,7 @@ const Checkout = () => {
                 )}
 
                 {/* Option to save card for logged in users */}
-                {currentUser && selectedCard === 'new' && (
+                {currentUser && (!savedCards.length || selectedCard === 'new') && (
                   <div className="mb-3 form-check">
                     <input
                       type="checkbox"
@@ -497,12 +541,27 @@ const Checkout = () => {
               <h5>Order Summary</h5>
             </div>
             <div className="card-body">
-              {cartItems.map(item => (
-                <div key={item.id} className="d-flex justify-content-between mb-2">
-                  <span>{item.name} x {item.quantity}</span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+              {Array.isArray(cartItems) ? cartItems.map(item => {
+                try {
+                  if (!item || !item.id || typeof item.price !== 'number' || typeof item.quantity !== 'number') {
+                    console.error("Invalid item in cart:", item);
+                    return null;
+                  }
+                  return (
+                    <div key={item.id} className="d-flex justify-content-between mb-2">
+                      <span>{item.name || 'Unknown Product'} x {item.quantity}</span>
+                      <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                  );
+                } catch (error) {
+                  console.error("Error rendering cart item:", error);
+                  return null;
+                }
+              }) : (
+                <div className="text-center">
+                  <p>No items in cart</p>
                 </div>
-              ))}
+              )}
               <hr />
               <div className="d-flex justify-content-between">
                 <strong>Total:</strong>

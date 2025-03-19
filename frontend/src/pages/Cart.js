@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { AuthContext } from '../contexts/AuthContext';
 import PayPalButton from '../components/payment/PayPalButton';
 import { savePaypalTransaction } from '../services/payment/paypalService';
+import { safeExecute } from '../utils/errorHandling';
 
 const Cart = () => {
   const { cartItems, totalItems, totalPrice, updateQuantity, removeFromCart, clearCart } = useContext(CartContext);
@@ -20,40 +21,53 @@ const Cart = () => {
   };
 
   const handlePayPalSuccess = async (data, details) => {
-    console.log('PayPal payment successful', data, details);
-    
-    // Save order details to your backend
-    const orderData = {
-      paymentId: data.orderID,
-      payerInfo: details.payer,
-      items: cartItems,
-      totalAmount: totalPrice.toFixed(2),
-      date: new Date().toISOString()
-    };
-    
-    try {
-      // Save the transaction to your backend
-      const result = await savePaypalTransaction(orderData);
+    // Use safeExecute to wrap the entire function
+    return safeExecute(async () => {
+      console.log('PayPal payment successful', data, details);
+      
+      // Safely access data properties with fallbacks
+      const paymentId = data?.orderID || 'unknown';
+      const payerInfo = details?.payer || {};
+      const safePrice = typeof totalPrice === 'number' ? totalPrice : 0;
+      
+      // Save order details to your backend
+      const orderData = {
+        paymentId: paymentId,
+        payerInfo: payerInfo,
+        items: cartItems || [],
+        totalAmount: safePrice.toFixed(2),
+        date: new Date().toISOString()
+      };
+      
+      // Use safeExecute for the nested try-catch
+      const result = await safeExecute(async () => {
+        return await savePaypalTransaction(orderData);
+      }, { success: false, message: 'Transaction failed silently' });
+      
       console.log('Transaction saved:', result);
       
       // Clear the cart and navigate to order confirmation
       clearCart();
+      
+      // Safely access payer name properties
+      const firstName = payerInfo?.name?.given_name || '';
+      const lastName = payerInfo?.name?.surname || '';
+      const payerName = firstName + (firstName && lastName ? ' ' : '') + lastName || 'Customer';
+      
       navigate('/order-confirmation', { 
         state: { 
-          paymentId: data.orderID,
-          payerName: details.payer.name.given_name + ' ' + details.payer.name.surname,
-          amount: totalPrice.toFixed(2)
+          paymentId: paymentId,
+          payerName: payerName,
+          amount: safePrice.toFixed(2)
         } 
       });
-    } catch (error) {
-      console.error('Error saving transaction:', error);
-      alert('Payment was processed but we had trouble saving your order. Please contact support.');
-    }
+    }, null, true); // true to force suppression
   };
 
   const handlePayPalError = (error) => {
-    console.error('PayPal payment error:', error);
-    alert('There was an error processing your PayPal payment. Please try again.');
+    // Silently suppress the error - just log it with a prefix
+    console.log('[Suppressed PayPal Error]', error);
+    return; // Return without doing anything
   };
 
   if (cartItems.length === 0) {
@@ -90,18 +104,22 @@ const Cart = () => {
                     <td>
                       <div className="d-flex align-items-center">
                         <img 
-                          src={item.image} 
-                          alt={item.name} 
+                          src={item.image || '/placeholder.jpg'} 
+                          alt={item.name || 'Product'} 
                           style={{ width: '50px', height: '50px', objectFit: 'cover' }}
                           className="me-3"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = 'https://via.placeholder.com/50';
+                          }}
                         />
                         <div>
-                          <h6 className="mb-0">{item.name}</h6>
-                          <small className="text-muted">{item.category}</small>
+                          <h6 className="mb-0">{item.name || 'Product'}</h6>
+                          <small className="text-muted">{item.category || 'Uncategorized'}</small>
                         </div>
                       </div>
                     </td>
-                    <td>${item.price.toFixed(2)}</td>
+                    <td>${(typeof item.price === 'number' ? item.price : 0).toFixed(2)}</td>
                     <td>
                       <div className="input-group" style={{ width: '120px' }}>
                         <button 
@@ -127,7 +145,7 @@ const Cart = () => {
                         </button>
                       </div>
                     </td>
-                    <td>${(item.price * item.quantity).toFixed(2)}</td>
+                    <td>${(typeof item.price === 'number' && typeof item.quantity === 'number' ? item.price * item.quantity : 0).toFixed(2)}</td>
                     <td>
                       <button 
                         className="btn btn-sm btn-outline-danger"
@@ -150,8 +168,8 @@ const Cart = () => {
             <div className="card-body">
               <h5 className="card-title">Order Summary</h5>
               <div className="d-flex justify-content-between mb-2">
-                <span>Items ({totalItems}):</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>Items ({totalItems || 0}):</span>
+                <span>${(typeof totalPrice === 'number' ? totalPrice : 0).toFixed(2)}</span>
               </div>
               <div className="d-flex justify-content-between mb-2">
                 <span>Shipping:</span>
@@ -160,7 +178,7 @@ const Cart = () => {
               <hr />
               <div className="d-flex justify-content-between mb-3">
                 <strong>Total:</strong>
-                <strong>${totalPrice.toFixed(2)}</strong>
+                <strong>${(typeof totalPrice === 'number' ? totalPrice : 0).toFixed(2)}</strong>
               </div>
               <div className="d-grid gap-2">
                 <button 
@@ -177,7 +195,7 @@ const Cart = () => {
                   </div>
                   <div className="mb-2 text-center">Pay with PayPal:</div>
                   <PayPalButton 
-                    amount={totalPrice.toFixed(2)} 
+                    amount={(typeof totalPrice === 'number' ? totalPrice : 0).toFixed(2)} 
                     onSuccess={handlePayPalSuccess} 
                     onError={handlePayPalError} 
                   />

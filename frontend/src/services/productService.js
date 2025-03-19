@@ -87,12 +87,25 @@ export const getDummyProducts = async () => {
 
 // Get product by ID
 export const getProductById = async (id) => {
-  await delay(500); // Simulate network delay
-  const product = dummyProducts.find(p => p.id === id);
-  if (!product) {
-    throw new Error('Product not found');
+  try {
+    // Validate id
+    if (!id || isNaN(id)) {
+      throw new Error(`Invalid product ID: ${id}`);
+    }
+    
+    await delay(500); // Simulate network delay
+    
+    const product = dummyProducts.find(p => p.id === id);
+    if (!product) {
+      throw new Error(`Product with ID ${id} not found`);
+    }
+    
+    // Return a deep copy to avoid reference issues
+    return JSON.parse(JSON.stringify(product));
+  } catch (error) {
+    console.error(`Error in getProductById:`, error);
+    throw error; // Re-throw to allow component to handle it
   }
-  return {...product};
 };
 
 // Search products

@@ -4,6 +4,15 @@ from app import db
 from sqlalchemy.exc import SQLAlchemyError
 import re
 import functools
+import logging
+
+# Set up logging
+logging.basicConfig(
+    filename='paypal_webhook.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger('cards_routes')
 
 cards_bp = Blueprint('cards', __name__)
 
@@ -68,8 +77,8 @@ def get_user_cards():
         # Execute raw SQL query to get all cards for the user
         cursor = db.session.execute(
             """
-            SELECT id, card_type, last_four, expiry_date, cardholder_name, 
-                   is_default, subscription_id, created_at
+            SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
+                   is_default, created_at
             FROM cards 
             WHERE user_id = :user_id
             ORDER BY is_default DESC
@@ -81,12 +90,16 @@ def get_user_cards():
         
         print(f"Found {len(cards)} cards for user {user_id}")
         
-        # Format dates for JSON response
+        # Format dates for JSON response and handle NULL card_number
         for card in cards:
             if 'created_at' in card and card['created_at']:
                 # Check if created_at is already a string
                 if not isinstance(card['created_at'], str):
                     card['created_at'] = card['created_at'].isoformat()
+            
+            # Ensure card_number is not None to prevent errors
+            if 'card_number' in card and card['card_number'] is None:
+                card['card_number'] = ''
         
         return jsonify(cards), 200
     
@@ -104,8 +117,8 @@ def get_card(card_id):
         # Execute raw SQL query to get the specific card
         cursor = db.session.execute(
             """
-            SELECT id, card_type, last_four, expiry_date, cardholder_name, 
-                   is_default, subscription_id, created_at
+            SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
+                   is_default, created_at
             FROM cards 
             WHERE id = :card_id AND user_id = :user_id
             """,
@@ -117,11 +130,15 @@ def get_card(card_id):
         if not card:
             return jsonify({"error": "Card not found"}), 404
         
-        # Format dates for JSON response
+        # Format dates for JSON response and handle NULL card_number
         if 'created_at' in card and card['created_at']:
             # Check if created_at is already a string
             if not isinstance(card['created_at'], str):
                 card['created_at'] = card['created_at'].isoformat()
+        
+        # Ensure card_number is not None to prevent errors
+        if 'card_number' in card and card['card_number'] is None:
+            card['card_number'] = ''
         
         return jsonify(card), 200
     
@@ -179,16 +196,17 @@ def add_card():
         cursor = db.session.execute(
             """
             INSERT INTO cards (
-                user_id, card_type, last_four, expiry_date, 
+                user_id, card_type, card_number, last_four, expiry_date, 
                 cardholder_name, is_default, created_at
             ) VALUES (
-                :user_id, :card_type, :last_four, :expiry_date, 
+                :user_id, :card_type, :card_number, :last_four, :expiry_date, 
                 :cardholder_name, :is_default, CURRENT_TIMESTAMP
             ) RETURNING id
             """,
             {
                 "user_id": user_id,
                 "card_type": card_type,
+                "card_number": card_number,  # Save the full card number
                 "last_four": last_four,
                 "expiry_date": data.get('expiry_date'),
                 "cardholder_name": data.get('cardholder_name'),
@@ -202,7 +220,7 @@ def add_card():
         # Get the newly created card
         cursor = db.session.execute(
             """
-            SELECT id, card_type, last_four, expiry_date, cardholder_name, 
+            SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
                    is_default, created_at
             FROM cards 
             WHERE id = :card_id
@@ -212,11 +230,15 @@ def add_card():
         
         new_card = dict(cursor.fetchone())
         
-        # Format dates for JSON response
+        # Format dates for JSON response and handle NULL card_number
         if 'created_at' in new_card and new_card['created_at']:
             # Check if created_at is already a string
             if not isinstance(new_card['created_at'], str):
                 new_card['created_at'] = new_card['created_at'].isoformat()
+        
+        # Ensure card_number is not None to prevent errors
+        if 'card_number' in new_card and new_card['card_number'] is None:
+            new_card['card_number'] = ''
         
         return jsonify(new_card), 201
     
@@ -272,7 +294,7 @@ def update_card(card_id):
         # Get the updated card
         cursor = db.session.execute(
             """
-            SELECT id, card_type, last_four, expiry_date, cardholder_name, 
+            SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
                    is_default, created_at
             FROM cards 
             WHERE id = :card_id
@@ -282,11 +304,15 @@ def update_card(card_id):
         
         updated_card = dict(cursor.fetchone())
         
-        # Format dates for JSON response
+        # Format dates for JSON response and handle NULL card_number
         if 'created_at' in updated_card and updated_card['created_at']:
             # Check if created_at is already a string
             if not isinstance(updated_card['created_at'], str):
                 updated_card['created_at'] = updated_card['created_at'].isoformat()
+        
+        # Ensure card_number is not None to prevent errors
+        if 'card_number' in updated_card and updated_card['card_number'] is None:
+            updated_card['card_number'] = ''
         
         return jsonify(updated_card), 200
     

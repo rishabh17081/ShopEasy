@@ -1,9 +1,43 @@
-2025-03-17 00:41:33,841 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
-2025-03-17 00:41:33,939 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
-2025-03-17 00:41:38,052 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
-2025-03-17 00:41:38,104 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
-2025-03-17 00:41:38,106 - __main__ - ERROR - Error starting webhook server: [Errno 48] Address already in use
-2025-03-17 00:42:09,651 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
-2025-03-17 00:42:09,728 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
-2025-03-17 00:42:09,908 - __main__ - INFO - Webhook server logging to file: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal_webhook.log
-2025-03-17 00:42:09,959 - __main__ - INFO - Starting PayPal webhook server on localhost:8000
+2025-03-18 20:36:11,855 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/paypal.py', reloading
+2025-03-18 20:42:59,016 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:42:59] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:42:59,018 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:42:59] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:42:59,043 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:42:59] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:42:59,044 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:42:59] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:26,638 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:26] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:26,640 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:26] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:26,643 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:26] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:26,646 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:26] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:59,930 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:59] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:43:59,937 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:43:59] "[35m[1mPOST /api/user/cards HTTP/1.1[0m" 201 -
+2025-03-18 20:46:50,820 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-03-18 20:46:50,820 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-03-18 20:46:50,821 - werkzeug - INFO -  * Restarting with stat
+2025-03-18 20:47:31,527 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:47:31,528 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:47:31,551 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:47:31,555 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:47:31,558 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:47:31,561 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:47:31] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,828 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,829 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,836 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,839 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,844 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:22,849 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:22] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:26,269 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:26] "OPTIONS /api/user/cards/3 HTTP/1.1" 200 -
+2025-03-18 20:48:26,279 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:26] "DELETE /api/user/cards/3 HTTP/1.1" 200 -
+2025-03-18 20:48:33,837 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:33] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:33,839 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:33] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:33,844 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:33] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:48:33,847 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:48:33] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:49:36,298 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-03-18 20:49:36,298 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-03-18 20:49:36,298 - werkzeug - INFO -  * Restarting with stat
+2025-03-18 20:50:03,548 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:03] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:50:03,549 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:03] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:50:03,568 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:03] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:50:03,570 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:03] "GET /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:50:26,181 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:26] "OPTIONS /api/user/cards HTTP/1.1" 200 -
+2025-03-18 20:50:26,188 - werkzeug - INFO - 10.0.0.146 - - [18/Mar/2025 20:50:26] "[35m[1mPOST /api/user/cards HTTP/1.1[0m" 201 -

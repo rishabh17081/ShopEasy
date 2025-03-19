@@ -13,7 +13,19 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await getProductById(parseInt(id));
+        // Validate id before fetching
+        const productId = parseInt(id);
+        if (isNaN(productId)) {
+          throw new Error("Invalid product ID");
+        }
+        
+        const data = await getProductById(productId);
+        
+        // Validate the returned product data
+        if (!data || !data.id) {
+          throw new Error("Received invalid product data");
+        }
+        
         setProduct(data);
         setLoading(false);
       } catch (error) {
@@ -26,8 +38,11 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
-    alert(`${quantity} ${product.name} added to cart!`);
+    try {
+      addToCart(product, quantity);
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+    }
   };
 
   if (loading) {

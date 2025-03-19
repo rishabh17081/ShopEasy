@@ -36,8 +36,8 @@ const Login = () => {
         email,
         name: email.split('@')[0], // Just use part of the email as the name
         id: 1, // Use ID 1 to match the database user
-        first_name: 'John',
-        last_name: 'Doe'
+        first_name: 'Jamie',
+        last_name: 'Lee'
       };
       
       // Set tokens in localStorage for API authentication
