@@ -517,3 +517,195 @@
 2025-04-10 01:40:54,338 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 2025-04-10 01:41:03,634 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 2025-04-10 01:41:03,637 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:41:03] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 10:12:09,350 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:12:09,556 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:12:41,047 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:12:41,179 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:13:17,689 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:13:17,880 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:13:20,156 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:13:20,288 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:13:24,809 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:13:24,940 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:13:32,978 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 10:13:32,978 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 10:13:32,978 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:19:53,136 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:19:53] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 10:19:53,196 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:19:53] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:20:09,132 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 10:20:09,133 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 10:20:09,137 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:20:16,109 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:20:16] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 10:20:16,150 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:20:16] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:22:11,326 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:22:11,517 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:22:23,213 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:22:23,265 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:22:39,627 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 10:22:39,627 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 10:22:39,628 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:22:47,658 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:22:47] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 10:22:47,728 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:22:47] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:24:35,595 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 10:24:35,807 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:24:36,216 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:24:54,724 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 10:24:55,174 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:24:55,773 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:26:03,927 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:26:03] "[33mGET /main.c734698f46d7df62544e.hot-update.json HTTP/1.1[0m" 404 -
+2025-04-10 10:26:17,577 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 10:26:17,744 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:26:18,274 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 10:26:18,285 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:32:03,427 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:32:03] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 10:32:03,431 - app.routes.chatbot - INFO - Processing query: hi
+2025-04-10 10:32:03,521 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 551, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 10:32:03,525 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:32:03] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:37:48,065 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 10:37:48,072 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 551, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 10:37:48,075 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:37:48] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:42:01,437 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 10:42:01,444 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 551, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 10:42:01,445 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:42:01] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:42:49,754 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 10:42:49,757 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 551, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 10:42:49,759 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:42:49] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 10:47:23,116 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 10:47:23,328 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:47:23,749 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 10:47:23,760 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:56:52,083 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 10:56:52,088 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:56:52,691 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 10:56:52,691 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 10:56:52,692 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 10:56:52,967 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 10:56:52,973 - chatbot.shopeasy_ecommerce_agent - INFO - Logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_agent.log
+2025-04-10 10:56:58,543 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 10:56:58,602 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 551, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 10:56:58,605 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:56:58] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:00:46,819 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log

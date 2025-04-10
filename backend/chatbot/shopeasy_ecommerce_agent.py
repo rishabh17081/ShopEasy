@@ -9,6 +9,8 @@ import json
 import asyncio
 import base64
 import io
+import traceback
+from datetime import datetime
 # Set matplotlib backend to non-interactive Agg to avoid GUI issues in async environments
 import matplotlib
 matplotlib.use('Agg')  # Must be set before importing pyplot
@@ -52,8 +54,8 @@ async def generate_invoice_insights(
     Returns:
         Dictionary containing insights and a base64-encoded pie chart image
     """
-    print('[generateInvoiceInsights] Starting to generate invoice insights')
-    print(f'[generateInvoiceInsights] Context: {json.dumps({"sandbox": context.get("sandbox"), "merchant_id": context.get("merchant_id")})}')
+    print('[INFO] Starting to generate invoice insights')
+    print(f'[DEBUG] Context: {json.dumps({"sandbox": context.get("sandbox"), "merchant_id": context.get("merchant_id")})}')
     
     # Get invoices using the existing list_invoices function
     try:
@@ -64,11 +66,11 @@ async def generate_invoice_insights(
             'total_required': params.get('total_required', True)
         }
         
-        print(f'[generateInvoiceInsights] Fetching invoices with params: {json.dumps(params_with_defaults)}')
+        print(f'[DEBUG] Fetching invoices with params: {json.dumps(params_with_defaults)}')
         invoices_data = await list_invoices(paypal_api, context, params_with_defaults)
         
         if 'items' not in invoices_data or not isinstance(invoices_data['items'], list):
-            print('[generateInvoiceInsights] No invoices found or invalid response format')
+            print('[WARNING] No invoices found or invalid response format')
             return {
                 'error': 'No invoices found or invalid response format',
                 'raw_response': invoices_data
@@ -76,7 +78,7 @@ async def generate_invoice_insights(
         
         invoices = invoices_data['items']
         total_invoices = len(invoices)
-        print(f'[generateInvoiceInsights] Retrieved {total_invoices} invoices for analysis')
+        print(f'[INFO] Retrieved {total_invoices} invoices for analysis')
         
         if total_invoices == 0:
             return {
@@ -158,7 +160,7 @@ async def generate_invoice_insights(
                 'amount_by_status': amount_by_status
             }
         
-        print(f'[generateInvoiceInsights] Generated insights for {total_invoices} invoices')
+        print(f'[INFO] Generated insights for {total_invoices} invoices')
         
         return {
             'chart': chart_base64,
@@ -168,7 +170,9 @@ async def generate_invoice_insights(
         }
         
     except Exception as error:
-        print(f'[generateInvoiceInsights] Error generating invoice insights: {str(error)}')
+        print(f'[ERROR] Error generating invoice insights: {str(error)}')
+        print('[ERROR] Traceback:')
+        print(traceback.format_exc())
         return {
             'error': f'Error generating invoice insights: {str(error)}'
         }
@@ -247,7 +251,84 @@ class AnthropicToolsHandler:
         create_invoice_tool = Tool(
             name="create_invoice",
             func=async_wrapper(lambda data: create_invoice(self.paypal_api, self.paypal_context, data)),
-            description="Create a draft invoice in PayPal and then send it to the customer. Required parameters: detail, invoicer, primary_recipients, amount."
+            description="""
+Create a draft invoice in PayPal and then send the invoice to customer. Show the response link to the user that comes under "sendResult".
+Required parameters are: invoicer.email_address (email address), primary_recipients[0].billing_info.email_address (recipient's email address), items[0].name (product name), items[0].unit_amount.value (product cost)
+High level: detail, invoicer, primary_recipients, items, amount are required json objects.
+
+Below are the required parameters to input referencing the json payload below:
+invoicer.email_address (email address), primary_recipients[0].billing_info.email_address (recipient's email address), items[0].name (product name), items[0].unit_amount.value (product cost),
+items[0].tax.percent (tax percent), amount.breakdown.discount.invoice_discount.percent (discount)
+
+Add tax for each item and not in custom breakdown.
+only apply discount here: amount.breakdown.discount.invoice_discount.percent and not here: items[0].discount.percent unless user says item/product specific discount.
+Also specific amount must be double or integer.
+Below are the parameters you need to take care of:
+invoice_number -> auto-generate invoice number starting with # followed by 10 random numbers
+invoice_date -> today's date
+currency_code -> "USD"
+payment_term.term_type -> "NET_10"
+payment_term.due_date -> within 10 days
+Populate other fields with test data.
+Below is the payload request structure:
+{
+    "detail": {
+        "invoice_number": "#12334263331",
+        "reference": "deal-ref",
+        "invoice_date": "2018-11-12",
+        "currency_code": "USD",
+        "note": "Thank you for your business.",
+        "term": "No refunds after 30 days.",
+        "memo": "This is a long contract",
+        "payment_term": {
+            "term_type": "NET_10",
+            "due_date": "2018-11-22"
+        }
+    },
+    "invoicer": {
+        "name": {
+            "given_name": "David",
+            "surname": "Larusso"
+        },
+        "email_address": "sb-onrga38364250@business.example.com"
+    },
+    "primary_recipients": [
+        {
+            "billing_info": {
+                "email_address": "bill-me@example.com"
+            }
+        }
+    ],
+    "items": [
+        {
+            "name": "Yoga Mat",
+            "description": "Elastic mat to practice yoga.",
+            "quantity": 1,
+            "unit_amount": {
+                "currency_code": "USD",
+                "value": 0
+            },
+            "tax": {
+                "name": "Sales Tax",
+                "percent": 0
+            },
+            "discount": {
+                "percent": 0
+            },
+            "unit_of_measure": "QUANTITY"
+        }
+    ],
+    "amount": {
+        "breakdown": {
+            "discount": {
+                "invoice_discount": {
+                    "percent": 0
+                }
+            }
+        }
+    }
+}
+"""
         )
         
         list_invoices_tool = Tool(
@@ -492,8 +573,8 @@ Only use the tools when necessary. If you don't need to use a tool, just respond
                                 "input": tool_input
                             })
                         except json.JSONDecodeError as e:
-                            print(f"Error parsing tool input JSON: {tool_input_str}")
-                            print(f"JSON error: {str(e)}")
+                            print(f'[ERROR] Error parsing tool input JSON: {tool_input_str}')
+                            print(f'[ERROR] JSON error: {str(e)}')
                             # Create a dictionary from key-value pairs manually as a fallback
                             try:
                                 # Simple key-value extraction for basic cases
@@ -522,11 +603,13 @@ Only use the tools when necessary. If you don't need to use a tool, just respond
                                         "name": tool_name,
                                         "input": tool_input
                                     })
-                                    print(f"Manually extracted tool input: {json.dumps(tool_input)}")
+                                    print(f'[DEBUG] Manually extracted tool input: {json.dumps(tool_input)}')
                                 else:
-                                    print(f"Could not extract any key-value pairs from: {tool_input_str}")
+                                    print(f'[WARNING] Could not extract any key-value pairs from: {tool_input_str}')
                             except Exception as ex:
-                                print(f"Error extracting key-value pairs: {str(ex)}")
+                                print(f'[ERROR] Error extracting key-value pairs: {str(ex)}')
+                                print('[ERROR] Traceback:')
+                                print(traceback.format_exc())
                 
                 start_idx = tool_end + 7
         
@@ -555,7 +638,9 @@ Only use the tools when necessary. If you don't need to use a tool, just respond
             try:
                 follow_up_response = chain.invoke(follow_up_messages)
             except Exception as e:
-                print(f"Error getting follow-up response: {str(e)}")
+                print(f'[ERROR] Error getting follow-up response: {str(e)}')
+                print('[ERROR] Traceback:')
+                print(traceback.format_exc())
                 follow_up_response = f"Error processing tool results: {str(e)}"
             result["follow_up_response"] = follow_up_response
         
@@ -599,11 +684,13 @@ Only use the tools when necessary. If you don't need to use a tool, just respond
                     tool_results.append(result)
                 except Exception as e:
                     error_message = f"Error executing tool {tool_name}: {str(e)}"
-                    print(error_message)
+                    print(f'[ERROR] {error_message}')
+                    print('[ERROR] Traceback:')
+                    print(traceback.format_exc())
                     tool_results.append({"error": error_message})
             else:
                 error_message = f"Tool {tool_name} not found"
-                print(error_message)
+                print(f'[ERROR] {error_message}')
                 tool_results.append({"error": error_message})
         
         return tool_results
