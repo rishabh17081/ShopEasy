@@ -709,3 +709,37 @@ Traceback (most recent call last):
 KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
 2025-04-10 10:56:58,605 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 10:56:58] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
 2025-04-10 11:00:46,819 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:18:56,874 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:18:57,431 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 11:18:57,431 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 11:18:57,432 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:18:57,701 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:19:03,634 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:19:03] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 11:19:03,642 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 11:19:03,723 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 525, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:19:03,725 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:19:03] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
