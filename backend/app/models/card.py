@@ -12,7 +12,6 @@ class Card(db.Model):
     expiry_date = db.Column(db.String(7), nullable=False)  # Format: MM/YYYY or MM/YY
     cardholder_name = db.Column(db.String(100), nullable=False)
     is_default = db.Column(db.Boolean, default=False, nullable=False)
-    subscription_id = db.Column(db.String(100), nullable=True, unique=True)  # PayPal Account Updater subscription ID
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
@@ -29,6 +28,5 @@ class Card(db.Model):
             'expiry_date': self.expiry_date,
             'cardholder_name': self.cardholder_name,
             'is_default': self.is_default,
-            'subscription_id': self.subscription_id,
             'created_at': self.created_at.isoformat() if self.created_at else None
         }
