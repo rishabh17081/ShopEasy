@@ -370,22 +370,22 @@
 2025-04-09 21:46:31,848 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_client.py', reloading
 2025-04-09 21:46:38,032 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/paypal_client.py', reloading
 2025-04-09 21:53:16,978 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/main.py', reloading
-2025-04-09 22:08:21,239 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
+2025-04-09 22:08:21,239 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
 2025-04-09 22:11:12,164 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal-agent-toolkit/typescript/src/shared/functions.py', reloading
 2025-04-09 22:11:53,317 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal-agent-toolkit/typescript/src/shared/functions.py', reloading
-2025-04-09 22:22:59,695 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:26:44,271 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:26:52,896 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:28:34,380 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:28:36,073 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:28:38,698 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:35:12,073 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:37:10,559 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:38:26,348 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:39:06,276 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 22:39:30,368 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 23:22:31,359 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
-2025-04-09 23:22:33,026 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/anthropic_tools.py', reloading
+2025-04-09 22:22:59,695 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:26:44,271 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:26:52,896 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:28:34,380 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:28:36,073 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:28:38,698 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:35:12,073 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:37:10,559 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:38:26,348 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:39:06,276 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 22:39:30,368 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 23:22:31,359 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-09 23:22:33,026 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
 2025-04-09 23:22:54,758 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal-agent-toolkit/typescript/src/shared/functions.py', reloading
 2025-04-09 23:32:18,104 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
 2025-04-09 23:32:32,462 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/__init__.py', reloading
@@ -426,3 +426,94 @@
 2025-04-10 00:29:02,326 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 2025-04-10 00:29:04,398 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 2025-04-10 00:29:04,399 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:29:04] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 00:56:12,216 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:56:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-10 00:56:38,686 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:56:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-10 00:57:13,082 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:57:13] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 00:57:16,052 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 00:57:16,053 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:57:16] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 00:58:38,112 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:58:38] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 00:58:48,967 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 00:58:53,309 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 00:58:53,317 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 00:58:53] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:04:12,761 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 01:04:12,915 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:04:50,602 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:04:50] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:04:50,921 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2025-04-10 01:04:50,922 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:04:50] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 01:06:01,719 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:06:01,719 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:06:01,720 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:06:12,643 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:06:12] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:06:13,007 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2025-04-10 01:06:13,008 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:06:13] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 01:10:59,637 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:10:59] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:11:03,700 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:11:03,711 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:11:03] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:11:23,294 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:11:23] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:11:26,537 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:11:37,068 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:11:37,077 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:11:37] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:12:10,979 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:12:10] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:12:23,887 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:12:23,889 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:12:23] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:16:07,745 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 01:16:07,920 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:16:48,989 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 01:16:49,100 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:19:14,030 - matplotlib.font_manager - WARNING - Matplotlib is building the font cache; this may take a moment.
+2025-04-10 01:19:17,072 - matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/Apple Color Emoji.ttc: Could not set the fontsize (invalid pixel size; error code 0x17)
+2025-04-10 01:19:17,129 - matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/Supplemental/NISC18030.ttf: Could not set the fontsize (invalid pixel size; error code 0x17)
+2025-04-10 01:19:17,170 - matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/LastResort.otf: tuple indices must be integers or slices, not str
+2025-04-10 01:19:17,181 - matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc: Can not load face (locations (loca) table missing; error code 0x90)
+2025-04-10 01:19:17,193 - matplotlib.font_manager - INFO - generated new fontManager
+2025-04-10 01:19:17,582 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:19:17,582 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:19:17,583 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:19:32,629 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:19:32] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:19:38,353 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:19:40,299 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:19:40,304 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:19:40] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:21:01,626 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 01:21:01,901 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:21:26,235 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:21:26,236 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:21:26,236 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:21:39,267 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:21:39] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:21:45,021 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:21:45,027 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:21:45] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:22:02,564 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:22:02] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:22:13,367 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:23:27,723 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:23:27,724 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:23:27,724 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:23:36,496 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:23:36] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:23:47,530 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:23:57,014 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:23:57,017 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:23:57] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:32:13,833 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 01:32:14,060 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:34:25,655 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:34:25,655 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:34:25,655 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:34:56,319 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:34:56] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:35:08,669 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:35:18,703 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:35:18,713 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:35:18] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:36:29,138 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 01:36:29,344 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:40:12,878 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 01:40:12,879 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 01:40:12,879 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 01:40:26,691 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:40:26] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:40:29,683 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:40:29,714 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:40:29] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:40:44,428 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:40:44] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 01:40:54,338 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:41:03,634 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 01:41:03,637 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 01:41:03] "POST /api/chatbot/query HTTP/1.1" 200 -

@@ -7,7 +7,7 @@ import json
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 
 # Import the AnthropicToolsHandler
-from chatbot.anthropic_tools import AnthropicToolsHandler, PayPalAPI
+from chatbot.shopeasy_ecommerce_agent import AnthropicToolsHandler, PayPalAPI
 
 chatbot_bp = Blueprint('chatbot', __name__)
 
