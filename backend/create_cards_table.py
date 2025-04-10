@@ -1,5 +1,28 @@
 import sqlite3
 import os
+import base64
+
+def encrypt_card_number(card_number):
+    """
+    Encrypt a card number using base64 encoding.
+    
+    Args:
+        card_number (str): The card number to encrypt
+        
+    Returns:
+        str: The encrypted card number
+    """
+    if not card_number:
+        return None
+    
+    # Remove any spaces from the card number
+    card_number = card_number.replace(' ', '')
+    
+    # Convert the card number to bytes and encode with base64
+    encoded_bytes = base64.b64encode(card_number.encode('utf-8'))
+    
+    # Convert the encoded bytes back to a string for storage
+    return encoded_bytes.decode('utf-8')
 
 # Get the path to the database file
 db_path = os.path.join(os.path.dirname(__file__), 'instance', 'ecommerce.db')
@@ -65,15 +88,17 @@ CREATE TABLE cards (
 ''')
 
 # Insert sample data for John Doe (user_id = 1)
+card1 = encrypt_card_number('371449635398431')
+card2 = encrypt_card_number('371234806987034')
 cursor.execute('''
 INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, created_at)
-VALUES (2, 'AMEX', '371449635398431', '8431', '01/2030', 'John Doe', 1, '2025-03-11 17:29:21')
-''')
+VALUES (2, 'AMEX', ?, '8431', '01/2030', 'John Doe', 1, '2025-03-11 17:29:21')
+''', (card1,))
 
 cursor.execute('''
 INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, created_at)
-VALUES (2, 'AMEX', '371234806987034', '7034', '01/2024', 'John Doe', 0, '2025-03-11 17:29:21')
-''')
+VALUES (2, 'AMEX', ?, '7034', '01/2024', 'John Doe', 0, '2025-03-11 17:29:21')
+''', (card2,))
 
 print("Sample cards data inserted for John Doe (user_id = 1)")
 

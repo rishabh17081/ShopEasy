@@ -1,0 +1,12 @@
+Starting webhook test script...
+Sending test webhook event to http://localhost:8000/webhooks/card-updated
+Payload: {
+  "expiry_date": "2032-01",
+  "resource": {
+    "update_type": "EXPIRY_UPDATE",
+    "subscription_id": "SUB-TEST-39362488"
+  }
+}
+Failed to send webhook event: 500
+Response: {"error":"Failed to update card"}
+

@@ -7,9 +7,11 @@ def register_routes(app):
     from app.routes.products import products_bp
     from app.routes.orders import orders_bp
     from app.routes.cards import cards_bp
+    from app.routes.paypal import paypal_bp
 
     # Register blueprints
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(products_bp, url_prefix='/api/products')
     app.register_blueprint(orders_bp, url_prefix='/api/orders')
     app.register_blueprint(cards_bp, url_prefix='/api')
+    app.register_blueprint(paypal_bp, url_prefix='/api/paypal')

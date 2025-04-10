@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity, verify_jwt_in_request
 from app import db
 from sqlalchemy.exc import SQLAlchemyError
+from app.utils.encryption import encrypt_card_number, decrypt_card_number
 import re
 import functools
 import logging
@@ -78,7 +79,7 @@ def get_user_cards():
         cursor = db.session.execute(
             """
             SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
-                   is_default, created_at
+                   is_default, subscription_id, created_at
             FROM cards 
             WHERE user_id = :user_id
             ORDER BY is_default DESC
@@ -90,15 +91,17 @@ def get_user_cards():
         
         print(f"Found {len(cards)} cards for user {user_id}")
         
-        # Format dates for JSON response and handle NULL card_number
+        # Format dates for JSON response and handle card_number decryption
         for card in cards:
             if 'created_at' in card and card['created_at']:
                 # Check if created_at is already a string
                 if not isinstance(card['created_at'], str):
                     card['created_at'] = card['created_at'].isoformat()
             
-            # Ensure card_number is not None to prevent errors
-            if 'card_number' in card and card['card_number'] is None:
+            # Decrypt card number if it exists
+            if 'card_number' in card and card['card_number']:
+                card['card_number'] = decrypt_card_number(card['card_number'])
+            elif 'card_number' in card and card['card_number'] is None:
                 card['card_number'] = ''
         
         return jsonify(cards), 200
@@ -118,7 +121,7 @@ def get_card(card_id):
         cursor = db.session.execute(
             """
             SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
-                   is_default, created_at
+                   is_default, subscription_id, created_at
             FROM cards 
             WHERE id = :card_id AND user_id = :user_id
             """,
@@ -130,14 +133,16 @@ def get_card(card_id):
         if not card:
             return jsonify({"error": "Card not found"}), 404
         
-        # Format dates for JSON response and handle NULL card_number
+        # Format dates for JSON response and handle card_number decryption
         if 'created_at' in card and card['created_at']:
             # Check if created_at is already a string
             if not isinstance(card['created_at'], str):
                 card['created_at'] = card['created_at'].isoformat()
         
-        # Ensure card_number is not None to prevent errors
-        if 'card_number' in card and card['card_number'] is None:
+        # Decrypt card number if it exists
+        if 'card_number' in card and card['card_number']:
+            card['card_number'] = decrypt_card_number(card['card_number'])
+        elif 'card_number' in card and card['card_number'] is None:
             card['card_number'] = ''
         
         return jsonify(card), 200
@@ -158,9 +163,12 @@ def add_card():
         return jsonify({"errors": validation_errors}), 400
     
     try:
-        # Process card details (in a real app, you'd tokenize card data using a payment processor)
+        # Process card details
         card_number = data.get('card_number', '').replace(' ', '')
         last_four = card_number[-4:] if card_number else None
+        
+        # Encrypt the card number before storing
+        encrypted_card_number = encrypt_card_number(card_number)
         
         # Detect card type based on first digit (simplified)
         card_type = 'Unknown'
@@ -197,20 +205,21 @@ def add_card():
             """
             INSERT INTO cards (
                 user_id, card_type, card_number, last_four, expiry_date, 
-                cardholder_name, is_default, created_at
+                cardholder_name, is_default, subscription_id, created_at
             ) VALUES (
                 :user_id, :card_type, :card_number, :last_four, :expiry_date, 
-                :cardholder_name, :is_default, CURRENT_TIMESTAMP
+                :cardholder_name, :is_default, :subscription_id, CURRENT_TIMESTAMP
             ) RETURNING id
             """,
             {
                 "user_id": user_id,
                 "card_type": card_type,
-                "card_number": card_number,  # Save the full card number
+                "card_number": encrypted_card_number,  # Save the encrypted card number
                 "last_four": last_four,
                 "expiry_date": data.get('expiry_date'),
                 "cardholder_name": data.get('cardholder_name'),
-                "is_default": is_default
+                "is_default": is_default,
+                "subscription_id": data.get('subscription_id')  # Allow setting subscription_id when creating a card
             }
         )
         
@@ -221,7 +230,7 @@ def add_card():
         cursor = db.session.execute(
             """
             SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
-                   is_default, created_at
+                   is_default, subscription_id, created_at
             FROM cards 
             WHERE id = :card_id
             """,
@@ -230,14 +239,16 @@ def add_card():
         
         new_card = dict(cursor.fetchone())
         
-        # Format dates for JSON response and handle NULL card_number
+        # Format dates for JSON response and handle card_number decryption
         if 'created_at' in new_card and new_card['created_at']:
             # Check if created_at is already a string
             if not isinstance(new_card['created_at'], str):
                 new_card['created_at'] = new_card['created_at'].isoformat()
         
-        # Ensure card_number is not None to prevent errors
-        if 'card_number' in new_card and new_card['card_number'] is None:
+        # Decrypt card number if it exists
+        if 'card_number' in new_card and new_card['card_number']:
+            new_card['card_number'] = decrypt_card_number(new_card['card_number'])
+        elif 'card_number' in new_card and new_card['card_number'] is None:
             new_card['card_number'] = ''
         
         return jsonify(new_card), 201
@@ -295,7 +306,7 @@ def update_card(card_id):
         cursor = db.session.execute(
             """
             SELECT id, card_type, card_number, last_four, expiry_date, cardholder_name, 
-                   is_default, created_at
+                   is_default, subscription_id, created_at
             FROM cards 
             WHERE id = :card_id
             """,
@@ -304,20 +315,71 @@ def update_card(card_id):
         
         updated_card = dict(cursor.fetchone())
         
-        # Format dates for JSON response and handle NULL card_number
+        # Format dates for JSON response and handle card_number decryption
         if 'created_at' in updated_card and updated_card['created_at']:
             # Check if created_at is already a string
             if not isinstance(updated_card['created_at'], str):
                 updated_card['created_at'] = updated_card['created_at'].isoformat()
         
-        # Ensure card_number is not None to prevent errors
-        if 'card_number' in updated_card and updated_card['card_number'] is None:
+        # Decrypt card number if it exists
+        if 'card_number' in updated_card and updated_card['card_number']:
+            updated_card['card_number'] = decrypt_card_number(updated_card['card_number'])
+        elif 'card_number' in updated_card and updated_card['card_number'] is None:
             updated_card['card_number'] = ''
         
         return jsonify(updated_card), 200
     
     except SQLAlchemyError as e:
         db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+# Update card subscription
+@cards_bp.route('/update_subscription', methods=['POST'])
+@custom_jwt_required
+def update_card_subscription():
+    data = request.json
+    card_id = data.get('card_id')
+    subscription_id = data.get('subscription_id')
+    
+    if not card_id or not subscription_id:
+        return jsonify({"error": "Card ID and subscription ID are required"}), 400
+    
+    try:
+        # Update the card with the subscription ID
+        db.session.execute(
+            "UPDATE cards SET subscription_id = :subscription_id WHERE id = :card_id",
+            {"subscription_id": subscription_id, "card_id": card_id}
+        )
+        db.session.commit()
+        
+        return jsonify({"message": "Card subscription updated successfully"}), 200
+    
+    except SQLAlchemyError as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+# Get card subscription
+@cards_bp.route('/subscription', methods=['GET'])
+@custom_jwt_required
+def get_card_subscription():
+    card_id = request.args.get('card_id')
+    
+    if not card_id:
+        return jsonify({"error": "Card ID is required"}), 400
+    
+    try:
+        cursor = db.session.execute(
+            "SELECT subscription_id FROM cards WHERE id = :card_id",
+            {"card_id": card_id}
+        )
+        
+        result = cursor.fetchone()
+        if not result:
+            return jsonify({"error": "Card not found"}), 404
+        
+        return jsonify({"subscription_id": result['subscription_id']}), 200
+    
+    except SQLAlchemyError as e:
         return jsonify({"error": str(e)}), 500
 
 # Delete a card

@@ -18,7 +18,7 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
     expiryDateObj.setMonth(expiryDateObj.getMonth() + 1, 0); // Last day of the month
     
     // Create a date object for the cutoff date (07/2025)
-    const cutoffDate = new Date(2025, 6, 31); // July 31, 2025
+    const cutoffDate = new Date(2025, 10, 31); // July 31, 2025
     
     // Compare the dates
     return expiryDateObj < cutoffDate;
