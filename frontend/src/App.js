@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderConfirmation from './pages/OrderConfirmation';
 import PaymentMethods from './pages/PaymentMethods';
+import ChatbotPage from './pages/ChatbotPage';
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/order-confirmation" element={<OrderConfirmation />} />
                 <Route path="/payment-methods" element={<PaymentMethods />} />
+                <Route path="/chatbot" element={<ChatbotPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </div>
