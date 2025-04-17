@@ -743,3 +743,1770 @@ Traceback (most recent call last):
     raise KeyError(msg)
 KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
 2025-04-10 11:19:03,725 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:19:03] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:36:47,605 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:36:50,448 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 11:36:50,448 - werkzeug - INFO -  * Running on http://172.20.10.2:5001/ (Press CTRL+C to quit)
+2025-04-10 11:36:50,449 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:36:50,731 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:36:52,100 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:36:52] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 11:36:52,103 - app.routes.chatbot - INFO - Processing query: HI
+2025-04-10 11:36:52,175 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 525, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:36:52,177 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:36:52] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:37:35,767 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 11:37:35,957 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:37:36,332 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:38:23,468 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:38:24,004 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 11:38:24,004 - werkzeug - INFO -  * Running on http://172.20.10.2:5001/ (Press CTRL+C to quit)
+2025-04-10 11:38:24,005 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:38:24,289 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:38:33,629 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:38:33] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 11:38:33,633 - app.routes.chatbot - INFO - Processing query: hi
+2025-04-10 11:38:33,710 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 102, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 527, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:38:33,713 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:38:33] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:38:44,144 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 11:38:44,319 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:38:44,709 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:42:04,549 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 11:42:04,739 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:42:05,132 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:42:51,219 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 11:42:51,220 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 11:42:51,279 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 11:42:51,283 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 112, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:42:51,286 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:42:51] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:48:13,274 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 11:48:13,281 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 112, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:48:13,284 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:48:13] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:50:48,926 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 11:50:48,933 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 112, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 11:50:48,937 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:50:48] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:55:00,628 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 11:55:01,026 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:55:01,422 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 11:56:40,838 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 11:56:40] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 11:58:52,147 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 11:58:52,239 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 11:58:52,888 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:02:44,016 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 12:02:44,018 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 12:02:44,081 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 12:02:44,085 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:02:44,088 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:02:44] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:02:51,298 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 12:02:51,299 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:02:51,300 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:02:51] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:05:19,682 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 12:05:19,858 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:05:20,268 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:05:24,792 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py', reloading
+2025-04-10 12:05:24,936 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:05:25,197 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:05:35,392 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:06:33,186 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:06:33,734 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 12:06:33,734 - werkzeug - INFO -  * Running on http://172.20.10.2:5001/ (Press CTRL+C to quit)
+2025-04-10 12:06:33,735 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:06:34,001 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:06:46,888 - app.routes.chatbot - INFO - Processing query: List all invoices in my PayPal account
+2025-04-10 12:06:46,889 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 12:06:46,940 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 12:06:46,943 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:06:46,946 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:06:46] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:09:38,256 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:09:38,788 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 12:09:38,789 - werkzeug - INFO -  * Running on http://172.20.10.2:5001/ (Press CTRL+C to quit)
+2025-04-10 12:09:38,789 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:09:39,053 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:09:59,403 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:09:59] "[33mGET /chatbot/health HTTP/1.1[0m" 404 -
+2025-04-10 12:10:49,151 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:10:49] "[33mGET /chatbot/health HTTP/1.1[0m" 404 -
+2025-04-10 12:11:16,845 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:11:16] "[33mPOST /chatbot/query HTTP/1.1[0m" 404 -
+2025-04-10 12:11:36,448 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:11:36] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 12:11:36,451 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 12:11:36,451 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 12:11:36,490 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 12:11:36,508 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:11:36,517 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:11:36] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:12:16,888 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:12:16] "GET /api/chatbot/health HTTP/1.1" 200 -
+2025-04-10 12:12:58,638 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 12:12:58,643 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:12:58,644 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:12:58] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:13:04,966 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 12:13:04,969 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:13:04,971 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:13:04] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:15:29,288 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 12:15:29,294 - app.routes.chatbot - ERROR - Error processing query: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 187, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 1786, in _call_with_config
+    context.run(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/config.py", line 398, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 161, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/prompts/base.py", line 157, in _validate_input
+    raise KeyError(msg)
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n    "detail"\'}.  Expected: [\'\\n    "detail"\', \'messages\'] Received: [\'messages\']\nNote: if you intended {\n    "detail"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "detail"}}\'.'
+2025-04-10 12:15:29,296 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:15:29] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 12:16:48,990 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 12:16:49,239 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:16:49,774 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:16:54,743 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 12:16:54,896 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 12:16:55,215 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 12:17:00,746 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 12:17:00,746 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 12:17:00,803 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 12:17:08,148 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 12:17:08,169 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 12:17:08,170 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:17:08] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 12:17:27,091 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:17:27] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 12:17:27,093 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 12:17:30,351 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 12:17:30,356 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 12:17:30,357 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 12:17:30] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:39:15,368 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:39:15] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:39:15,370 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 14:39:15,532 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.472200 seconds
+2025-04-10 14:39:16,087 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.873195 seconds
+2025-04-10 14:39:17,140 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 14:39:17,167 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:39:17] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 14:39:33,577 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:39:34,086 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 14:39:34,086 - werkzeug - INFO -  * Running on http://10.225.121.51:5001/ (Press CTRL+C to quit)
+2025-04-10 14:39:34,087 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 14:39:34,345 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:39:37,996 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:39:37] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:39:38,000 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 14:39:38,001 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 14:39:38,058 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 14:39:38,233 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.433755 seconds
+2025-04-10 14:39:38,716 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.819244 seconds
+2025-04-10 14:39:39,592 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 14:39:39,613 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:39:39] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 14:39:57,604 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 14:39:57,663 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.479833 seconds
+2025-04-10 14:39:58,200 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.837556 seconds
+2025-04-10 14:39:59,091 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 14:39:59,100 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:39:59] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 14:40:08,510 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 14:40:08,560 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.477309 seconds
+2025-04-10 14:40:09,096 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.997380 seconds
+2025-04-10 14:40:10,146 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 14:40:10,153 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:40:10] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 14:40:46,716 - app.routes.chatbot - INFO - Processing query: Hello, can you help me with PayPal invoices?
+2025-04-10 14:40:46,768 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.412899 seconds
+2025-04-10 14:40:47,232 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.966035 seconds
+2025-04-10 14:40:48,253 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 14:40:48,256 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:40:48] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 14:41:29,585 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:43:27,603 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:43:28,147 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 14:43:28,147 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 14:43:28,148 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 14:43:28,410 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:43:32,361 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:43:32] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:43:32,363 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 14:43:32,364 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 14:43:32,427 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 14:43:39,190 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 14:43:39,195 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 14:43:39,195 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:43:39] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:44:20,187 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 14:44:20,341 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 14:44:20,767 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 14:50:29,023 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:50:29] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:50:29,025 - app.routes.chatbot - INFO - Processing query: Hi 
+2025-04-10 14:50:29,027 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 14:50:29,074 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 14:50:32,956 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 14:50:32,960 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 14:50:32,960 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:50:32] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:50:48,537 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:50:48] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 14:50:48,541 - app.routes.chatbot - INFO - Processing query: list 2 unpaid invoices in the last month
+2025-04-10 14:50:59,448 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 14:51:01,766 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 14:51:01,770 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 14:51:01,771 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 14:51:01] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:07:25,762 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:07:25] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:07:25,764 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 15:07:29,570 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:07:29,576 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:07:29,576 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:07:29] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:23:42,112 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:23:42,613 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 15:23:42,614 - werkzeug - INFO -  * Running on http://10.225.121.51:5001/ (Press CTRL+C to quit)
+2025-04-10 15:23:42,614 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:23:42,877 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:24:03,196 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:24:03] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:24:03,198 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 15:24:03,199 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 15:24:03,258 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 15:24:03,413 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.469856 seconds
+2025-04-10 15:24:03,947 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.791897 seconds
+2025-04-10 15:24:04,795 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 15:24:04,804 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:24:04] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 15:24:23,689 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:24:24,223 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 15:24:24,223 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 15:24:24,223 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:24:24,584 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:24:28,390 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:24:28] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:24:28,392 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 15:24:28,393 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 15:24:28,456 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 15:24:32,052 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:24:32,063 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:24:32,064 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:24:32] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:24:51,630 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:24:51] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:24:51,632 - app.routes.chatbot - INFO - Processing query: list invoices for the past month
+2025-04-10 15:24:55,638 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:25:10,090 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:25:10,093 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:25:10,095 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:25:10] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:26:38,521 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:26:38] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:26:38,523 - app.routes.chatbot - INFO - Processing query: create invoice for cleaning service I provided at cost of $200 and painting job at $500. Only apply 10% discount on painting job. My email address is business_ashwani@paypal.com and customer email address is rishabhsharma1708@gmail.com. Apply 15% taxes
+2025-04-10 15:26:59,477 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:27:01,896 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:27:01,899 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:27:01,900 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:27:01] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:29:19,225 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:29:19] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:29:19,228 - app.routes.chatbot - INFO - Processing query: create invoice with PayPal
+2025-04-10 15:29:41,971 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:29:44,097 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:29:44,101 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:29:44,102 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:29:44] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:30:16,190 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 15:30:16,372 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:30:16,800 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:30:23,913 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 15:30:24,052 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:30:24,415 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:30:37,672 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 15:30:37,803 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:30:38,166 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:30:40,196 - werkzeug - INFO -  * Detected change in '/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py', reloading
+2025-04-10 15:30:40,360 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:30:40,652 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:30:46,694 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:30:47,139 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 15:30:47,139 - werkzeug - INFO -  * Running on http://192.0.0.2:5001/ (Press CTRL+C to quit)
+2025-04-10 15:30:47,140 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 15:30:47,394 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 15:31:03,026 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:31:03] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:31:03,027 - app.routes.chatbot - INFO - Processing query: create invoice with PayPal
+2025-04-10 15:31:03,027 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 15:31:03,304 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 15:31:09,047 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:31:09,068 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:31:09,070 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:31:09] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:31:50,447 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:31:50] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:31:50,449 - app.routes.chatbot - INFO - Processing query: create another invoice for cleaning the house at cost of $300 and tax of 10% fixed with my (invoicer) email address as business_ashwani@paypal.com and recipient email address as rishabhsharma1708@gmail.com
+2025-04-10 15:32:11,861 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:32:15,240 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:32:15,240 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:32:15,241 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:32:15] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:42:29,433 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:42:29] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 15:42:29,438 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 15:42:35,781 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 15:42:35,787 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 15:42:35,788 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 15:42:35] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:05:17,421 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:05:17] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:05:17,423 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 16:05:20,954 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 16:05:20,956 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 16:05:20,956 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:05:20] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:06:18,913 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:06:18] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:06:18,916 - app.routes.chatbot - INFO - Processing query: create invoice for cleaning service worth $200 and painting job worth $500. Discount is applied on painting job with my email address as business_ashwani@paypal.com and customer email address as rishabhsharma1708@gmail.com. Apply 15% taxes
+2025-04-10 16:06:49,698 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 16:06:51,579 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 16:06:51,579 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 16:06:51,580 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:06:51] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:07:16,814 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:07:16] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:07:16,817 - app.routes.chatbot - INFO - Processing query: create another invoice for cleaning the house at cost of $300 and tax of 10% fixed with my (invoicer) email address as business_ashwani@paypal.com and recipient email address as rishabhsharma1708@gmail.com
+2025-04-10 16:07:16,956 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.497545 seconds
+2025-04-10 16:07:17,536 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.756735 seconds
+2025-04-10 16:07:18,356 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 16:07:18,368 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:07:18] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 16:13:55,276 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:13:55] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:13:55,280 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 16:13:55,395 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.442125 seconds
+2025-04-10 16:13:55,901 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.981041 seconds
+2025-04-10 16:13:56,950 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 16:13:56,952 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:13:56] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 16:14:12,149 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 16:14:12,802 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 16:14:12,802 - werkzeug - INFO -  * Running on http://10.244.160.146:5001/ (Press CTRL+C to quit)
+2025-04-10 16:14:12,803 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 16:14:13,074 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 16:14:23,845 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:14:23] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:14:23,846 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 16:14:23,846 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 16:14:23,881 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 16:14:23,957 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.454030 seconds
+2025-04-10 16:14:24,484 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.838938 seconds
+2025-04-10 16:14:25,403 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 16:14:25,428 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:14:25] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 16:14:59,322 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 16:14:59,889 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 16:14:59,889 - werkzeug - INFO -  * Running on http://10.244.160.146:5001/ (Press CTRL+C to quit)
+2025-04-10 16:14:59,889 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 16:15:00,168 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 16:15:09,190 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:15:09] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 16:15:09,192 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 16:15:09,195 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 16:15:09,257 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 16:15:09,344 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.472189 seconds
+2025-04-10 16:15:09,892 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.919799 seconds
+2025-04-10 16:15:10,880 - app.routes.chatbot - ERROR - Error processing query: Connection error.
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1049, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot.py", line 120, in query
+    result = handler.query_with_tools(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/chatbot/shopeasy_ecommerce_agent.py", line 533, in query_with_tools
+    response = chain.invoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 2879, in invoke
+    input = context.run(step.invoke, input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 277, in invoke
+    self.generate_prompt(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 777, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 634, in generate
+    raise e
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 624, in generate
+    self._generate_with_cache(
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 846, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 776, in _generate
+    data = self._client.messages.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1073, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1151, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1083, in _request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+2025-04-10 16:15:10,899 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 16:15:10] "[35m[1mPOST /api/chatbot/query HTTP/1.1[0m" 500 -
+2025-04-10 17:26:23,712 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 17:26:56,414 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 17:26:56,954 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 17:26:56,954 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 17:26:56,955 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 17:26:57,219 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 17:27:04,095 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:27:04] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:27:04,098 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 17:27:04,099 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 17:27:04,133 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 17:27:06,709 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:27:06,716 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:27:06,716 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:27:06] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:27:45,819 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:27:45] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:27:45,821 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 17:27:48,775 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:27:48,778 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:27:48,780 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:27:48] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:29:11,431 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:29:11] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:29:11,434 - app.routes.chatbot - INFO - Processing query: create invoice for cleaning services I provided for cost $200 USD and apply discount of 10%. Taxes of 15% with my email address being business_ashwani@paypal.com and customer email address being rishabhsharma1708@gmail.com
+2025-04-10 17:29:30,688 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:29:33,382 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:29:33,383 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:29:33,383 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:29:33] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:36:39,359 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:36:39] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:36:39,362 - app.routes.chatbot - INFO - Processing query: now share shipment details with PayPal
+2025-04-10 17:36:47,424 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:36:49,234 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:36:49,239 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:36:49,240 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:36:49] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:37:40,175 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:37:40] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:37:40,179 - app.routes.chatbot - INFO - Processing query: how to share shipment details with PayPal
+2025-04-10 17:38:00,152 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:38:02,379 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:38:02,383 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:38:02,384 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:38:02] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:38:27,509 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:38:27] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:38:27,513 - app.routes.chatbot - INFO - Processing query: awesome below are the details:
+2025-04-10 17:38:31,361 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:38:31,364 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:38:31,365 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:38:31] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:38:39,805 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:38:39] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:38:39,808 - app.routes.chatbot - INFO - Processing query: transaction id: 
+2025-04-10 17:38:47,643 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:38:47,645 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:38:47,646 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:38:47] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:47:53,083 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 17:47:53,599 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-10 17:47:53,599 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-10 17:47:53,600 - werkzeug - INFO -  * Restarting with stat
+2025-04-10 17:47:53,876 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-10 17:49:44,335 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:49:44] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:49:44,341 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-10 17:49:44,342 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-10 17:49:44,414 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-10 17:49:47,319 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:49:47,342 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:49:47,343 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:49:47] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:50:04,817 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:50:04] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:50:04,820 - app.routes.chatbot - INFO - Processing query: share my shipment details with PayPal .. how?
+2025-04-10 17:50:15,582 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:50:17,320 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:50:17,324 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:50:17,328 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:50:17] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:51:01,893 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:51:01] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:51:01,896 - app.routes.chatbot - INFO - Processing query: great here's the tracking number: 8731649257426, transaction id: 1BJ133649P663131M and courier is Fedex and status is shipped
+2025-04-10 17:51:11,901 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:51:13,921 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:51:13,922 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:51:13,922 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:51:13] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:52:02,605 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:52:02] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-10 17:52:02,607 - app.routes.chatbot - INFO - Processing query: perform get shipment on tracking id 1BJ133649P663131M-8731649257426
+2025-04-10 17:52:14,437 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:52:16,513 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 17:52:16,514 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-10 17:52:16,514 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:52:16] "POST /api/chatbot/query HTTP/1.1" 200 -
+2025-04-13 23:19:06,172 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-13 23:19:06,898 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-04-13 23:19:06,898 - werkzeug - INFO -  * Running on http://10.0.0.146:5001/ (Press CTRL+C to quit)
+2025-04-13 23:19:06,898 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 23:19:07,188 - app.routes.chatbot - INFO - API logging initialized successfully at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/app/routes/chatbot_api.log
+2025-04-13 23:19:09,403 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 23:19:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 23:19:13,711 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 23:19:13] "OPTIONS /api/chatbot/query HTTP/1.1" 200 -
+2025-04-13 23:19:13,712 - app.routes.chatbot - INFO - Processing query: Hi
+2025-04-13 23:19:13,712 - app.routes.chatbot - INFO - Initializing PayPal API in sandbox mode
+2025-04-13 23:19:13,749 - app.routes.chatbot - INFO - Successfully initialized AnthropicToolsHandler
+2025-04-13 23:19:16,987 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-13 23:19:16,994 - app.routes.chatbot - INFO - Successfully processed query
+2025-04-13 23:19:16,994 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 23:19:16] "POST /api/chatbot/query HTTP/1.1" 200 -

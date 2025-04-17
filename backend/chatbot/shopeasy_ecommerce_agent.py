@@ -28,7 +28,9 @@ from langchain_core.runnables import RunnablePassthrough
 # Import PayPal functions
 import sys
 import os.path
-sys.path.append('/Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/paypal-agent-toolkit/typescript/src/shared')
+# Add the shared directory to Python path using relative path
+import os.path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'paypal-agent-toolkit', 'typescript', 'src', 'shared'))
 from functions import (
     create_invoice, list_invoices, send_invoice, send_invoice_reminder, cancel_sent_invoice,
     create_product, list_products, update_product,
@@ -180,10 +182,16 @@ async def generate_invoice_insights(
 # Mock PayPal API client for demonstration purposes
 class PayPalAPI:
     async def get_headers(self):
-        return {"Authorization": "Bearer A21AAKv4Ez5u2QNgDmBABYdFgVj4mNOSigmDRaykBTpRbiBrXWSMHIJ2k9lXb278qMMIsfQeOO3jVm5yH89pxQTbZ4JHJpLuA", "Content-Type": "application/json"}
+        # Get token from environment variable
+        token = os.environ.get("PAYPAL_ACCESS_TOKEN")
+        if not token:
+            raise ValueError("PAYPAL_ACCESS_TOKEN environment variable is required")
+        return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
     
     def get_base_url(self):
-        return "https://api.sandbox.paypal.com"
+        # Use sandbox URL for development, production URL for production
+        is_sandbox = os.environ.get("PAYPAL_SANDBOX", "true").lower() == "true"
+        return "https://api.sandbox.paypal.com" if is_sandbox else "https://api.paypal.com"
 
 
 class AnthropicToolsHandler:
@@ -195,8 +203,8 @@ class AnthropicToolsHandler:
         self, 
         api_key: Optional[str] = None,
         model_name: str = "claude-3-7-sonnet-20250219",
-        temperature: float = 0.7,
-        max_tokens: int = 10000,
+        temperature: float = 0.4,
+        max_tokens: int = 100000,
         system_message: Optional[str] = None,
         paypal_api: Optional[Any] = None,
         paypal_context: Optional[Dict[str, Any]] = None
@@ -478,7 +486,7 @@ Only use the tools when necessary. If you don't need to use a tool, just respond
         
         # Create the prompt template
         prompt = ChatPromptTemplate.from_messages([
-            ("system", combined_system_message),
+            SystemMessage(content=combined_system_message),
             MessagesPlaceholder(variable_name="messages"),
         ])
         
@@ -728,7 +736,7 @@ def main():
     """
     # Initialize the handler
     handler = AnthropicToolsHandler(
-        api_key='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',
+        api_key='your-anthropic-api-key',
         paypal_api=PayPalAPI(),
         paypal_context={"sandbox": True, "merchant_id": "demo_merchant_id"}
     )
@@ -767,6 +775,3 @@ def main():
     if "follow_up_response" in result:
         print("\n=== Follow-up Response ===")
         print(result["follow_up_response"])
-
-if __name__ == "__main__":
-    main()

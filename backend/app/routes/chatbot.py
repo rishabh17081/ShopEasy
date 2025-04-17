@@ -35,7 +35,15 @@ except Exception as e:
 # Add the backend directory to the path
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 
-# Import the AnthropicToolsHandler
+# Import the AnthropicToolsHandler (using absolute import path to avoid conflicts)
+import sys
+import os.path
+# Remove any existing paths to avoid conflicts
+if '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages' in sys.path:
+    sys.path.remove('/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages')
+# Add our project's path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.insert(0, project_root)
 from chatbot.shopeasy_ecommerce_agent import AnthropicToolsHandler, PayPalAPI
 
 chatbot_bp = Blueprint('chatbot', __name__)
@@ -49,9 +57,18 @@ def get_handler():
     """
     global handler
     if handler is None:
+        # Validate required environment variables
         api_key = os.environ.get("ANTHROPIC_API_KEY")
         if not api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable is not set")
+        
+        paypal_token = os.environ.get("PAYPAL_ACCESS_TOKEN")
+        if not paypal_token:
+            raise ValueError("PAYPAL_ACCESS_TOKEN environment variable is not set")
+        
+        # Get PayPal sandbox setting
+        is_sandbox = os.environ.get("PAYPAL_SANDBOX", "true").lower() == "true"
+        logger.info("Initializing PayPal API in %s mode", "sandbox" if is_sandbox else "production")
         
         handler = AnthropicToolsHandler(
             api_key=api_key,
@@ -60,8 +77,9 @@ def get_handler():
             max_tokens=4096,
             system_message="You are a helpful AI assistant for an e-commerce website.",
             paypal_api=PayPalAPI(),
-            paypal_context={"sandbox": True, "merchant_id": "demo_merchant_id"}
+            paypal_context={"sandbox": is_sandbox, "merchant_id": "demo_merchant_id"}
         )
+        logger.info("Successfully initialized AnthropicToolsHandler")
     
     return handler
 
@@ -109,7 +127,7 @@ def query():
             return jsonify(result)
         except Exception as e:
             logger.error('Error processing query: %s', str(e), exc_info=True)
-            return jsonify({"error": "Error processing query"}), 500
+            return jsonify({"error": "Error processing query" + str(e)}), 500
     
     except Exception as e:
         logger.error('Unexpected error in query endpoint: %s', str(e), exc_info=True)
