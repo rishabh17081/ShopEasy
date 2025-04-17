@@ -1,5 +1,28 @@
 import sqlite3
 import os
+import base64
+
+def encrypt_card_number(card_number):
+    """
+    Encrypt a card number using base64 encoding.
+    
+    Args:
+        card_number (str): The card number to encrypt
+        
+    Returns:
+        str: The encrypted card number
+    """
+    if not card_number:
+        return None
+    
+    # Remove any spaces from the card number
+    card_number = card_number.replace(' ', '')
+    
+    # Convert the card number to bytes and encode with base64
+    encoded_bytes = base64.b64encode(card_number.encode('utf-8'))
+    
+    # Convert the encoded bytes back to a string for storage
+    return encoded_bytes.decode('utf-8')
 
 # Get the path to the database file
 db_path = os.path.join(os.path.dirname(__file__), 'instance', 'ecommerce.db')
@@ -38,9 +61,13 @@ CREATE TABLE users (
 # Insert a sample user (John Doe)
 cursor.execute('''
 INSERT INTO users (id, username, email, password_hash, first_name, last_name, address, city, state, zip_code, country, phone, last_login)
-VALUES (1, 'johndoe', 'john.doe@example.com', 'hashed_password_123', 'John', 'Doe', '123 Main St', 'Boston', 'MA', '02108', 'USA', '555-123-4567', '2025-03-09T10:29:21.325127')
+VALUES (2, 'johndoe', 'john.doe@gmail.com', 'hashed_password_123', 'John', 'Doe', '123 Main St', 'Boston', 'MA', '02108', 'USA', '555-123-4567', '2025-03-09T10:29:21.325127')
 ''')
 
+cursor.execute('''
+INSERT INTO users (id, username, email, password_hash, first_name, last_name, address, city, state, zip_code, country, phone, last_login)
+VALUES (1, 'jamie', 'jamie.lee@gmail.com', 'hashed_password_123', 'Jamie', 'Lee', '134 Monroe St', 'Boston', 'MA', '02100', 'USA', '555-123-3467', '2025-03-09T10:29:21.325127')
+''')
 print("Sample user data inserted for John Doe (user_id = 1)")
 
 # Create the cards table
@@ -55,22 +82,23 @@ CREATE TABLE cards (
     expiry_date TEXT NOT NULL,
     cardholder_name TEXT NOT NULL,
     is_default INTEGER NOT NULL DEFAULT 0,
-    subscription_id TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id)
 )
 ''')
 
 # Insert sample data for John Doe (user_id = 1)
+card1 = encrypt_card_number('371449635398431')
+card2 = encrypt_card_number('371234806987034')
 cursor.execute('''
-INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, subscription_id, created_at)
-VALUES (1, 'AMEX', '371449635398431', '8431', '01/2030', 'John Doe', 1, NULL, '2025-03-11 17:29:21')
-''')
+INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, created_at)
+VALUES (2, 'AMEX', ?, '8431', '01/2030', 'John Doe', 1, '2025-03-11 17:29:21')
+''', (card1,))
 
 cursor.execute('''
-INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, subscription_id, created_at)
-VALUES (1, 'AMEX', '371234806987034', '7034', '01/2024', 'John Doe', 0, NULL, '2025-03-11 17:29:21')
-''')
+INSERT INTO cards (user_id, card_type, card_number, last_four, expiry_date, cardholder_name, is_default, created_at)
+VALUES (2, 'AMEX', ?, '7034', '01/2024', 'John Doe', 0, '2025-03-11 17:29:21')
+''', (card2,))
 
 print("Sample cards data inserted for John Doe (user_id = 1)")
 

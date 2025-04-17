@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Start the PayPal webhook server
-echo "Starting PayPal webhook server..."
-# Change to the backend directory
+# Start the webhook server for PayPal Account Updater events
 cd "$(dirname "$0")"
-# Run the webhook server module
-python3 -m app.events.webhook_card_update
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+echo "Starting webhook server on localhost:8000..."
+python3 -c "from app.events.webhook_card_update import main; main()"
+
+echo "Webhook server stopped."

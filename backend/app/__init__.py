@@ -42,8 +42,8 @@ def create_app(config_name='dev'):
         from app.models.user import User
         return User.query.get(identity)
     
-    # Enable CORS
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    # Enable CORS with specific origins
+    CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}})
     
     # Import and register blueprints using the helper function
     from app.routes import register_routes

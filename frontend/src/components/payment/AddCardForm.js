@@ -197,7 +197,7 @@ const AddCardForm = ({ userId, onCardAdded, onCancel }) => {
             name="cardholderName"
             value={formData.cardholderName}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder="Jamie Lee"
             required
           />
           {errors.cardholderName && (

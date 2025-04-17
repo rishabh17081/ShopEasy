@@ -1,0 +1,130 @@
+2025-03-18 22:08:12,117 - INFO - Starting webhook server on localhost:8000
+2025-03-18 22:09:01,727 - INFO - Received webhook event: {"id":"WH-9B136C24310E","create_time":"2025-03-11T07:18:44.000Z","resource_type":"checkout-order","event_type":"CARD.UPDATED","summary":"Checkout Order Declined due to Risk Fraud Filter failures","expiry_date":"2032-01","resource":{"update_type":"EXPIRY_UPDATE","subscription_id":"SUB-8821123381"},"links":[{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-70C00B9621A2","rel":"self","method":"GET","encType":"application/json"},{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-2154CCC8279F/resend","rel":"resend","method":"POST","encType":"application/json"}],"event_version":"1.0","zts":1741702724,"resource_version":"2.0"}
+2025-03-18 22:09:01,728 - INFO - Processing EXPIRY_UPDATE update for subscription SUB-8821123381
+2025-03-18 22:09:01,730 - INFO - Updating expiry date for card with subscription ID SUB-8821123381
+2025-03-18 22:09:01,730 - INFO - Updating card with subscription ID SUB-8821123381
+2025-03-18 22:09:01,730 - INFO - Attributes to update: {'expiry_date': '2032-01'}
+2025-03-18 22:09:01,731 - ERROR - Error updating card with subscription ID SUB-8821123381: no such column: updated_at
+2025-03-18 22:09:01,731 - ERROR - Failed to update card with subscription ID SUB-8821123381
+2025-03-18 22:09:01,731 - ERROR - Failed to process webhook for subscription SUB-8821123381
+2025-03-18 22:09:01,731 - ERROR - Error processing webhook: 500: Failed to update card
+2025-03-18 22:09:51,248 - INFO - Received webhook event: {"id":"WH-9B136C24310E","create_time":"2025-03-11T07:18:44.000Z","resource_type":"checkout-order","event_type":"CARD.UPDATED","summary":"Checkout Order Declined due to Risk Fraud Filter failures","expiry_date":"2032-01","resource":{"update_type":"EXPIRY_UPDATE","subscription_id":"SUB-8821123381"},"links":[{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-70C00B9621A2","rel":"self","method":"GET","encType":"application/json"},{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-2154CCC8279F/resend","rel":"resend","method":"POST","encType":"application/json"}],"event_version":"1.0","zts":1741702724,"resource_version":"2.0"}
+2025-03-18 22:09:51,249 - INFO - Processing EXPIRY_UPDATE update for subscription SUB-8821123381
+2025-03-18 22:09:51,249 - INFO - Updating expiry date for card with subscription ID SUB-8821123381
+2025-03-18 22:09:51,249 - INFO - Updating card with subscription ID SUB-8821123381
+2025-03-18 22:09:51,249 - INFO - Attributes to update: {'expiry_date': '2032-01'}
+2025-03-18 22:09:51,249 - ERROR - Error updating card with subscription ID SUB-8821123381: no such column: updated_at
+2025-03-18 22:09:51,249 - ERROR - Failed to update card with subscription ID SUB-8821123381
+2025-03-18 22:09:51,249 - ERROR - Failed to process webhook for subscription SUB-8821123381
+2025-03-18 22:09:51,249 - ERROR - Error processing webhook: 500: Failed to update card
+2025-03-18 22:10:36,094 - INFO - Starting webhook server on localhost:8000
+2025-03-18 22:10:38,235 - INFO - Received webhook event: {"id":"WH-9B136C24310E","create_time":"2025-03-11T07:18:44.000Z","resource_type":"checkout-order","event_type":"CARD.UPDATED","summary":"Checkout Order Declined due to Risk Fraud Filter failures","expiry_date":"2032-01","resource":{"update_type":"EXPIRY_UPDATE","subscription_id":"SUB-8821123381"},"links":[{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-70C00B9621A2","rel":"self","method":"GET","encType":"application/json"},{"href":"https://api-m.paypal.com/v1/notifications/webhooks-events/WH-2154CCC8279F/resend","rel":"resend","method":"POST","encType":"application/json"}],"event_version":"1.0","zts":1741702724,"resource_version":"2.0"}
+2025-03-18 22:10:38,235 - INFO - Processing EXPIRY_UPDATE update for subscription SUB-8821123381
+2025-03-18 22:10:38,235 - INFO - Updating expiry date for card with subscription ID SUB-8821123381
+2025-03-18 22:10:38,235 - INFO - Updating card with subscription ID SUB-8821123381
+2025-03-18 22:10:38,235 - INFO - Attributes to update: {'expiry_date': '2032-01'}
+2025-03-18 22:10:38,235 - ERROR - Error updating card with subscription ID SUB-8821123381: no such column: updated_at
+2025-03-18 22:10:38,235 - ERROR - Failed to update card with subscription ID SUB-8821123381
+2025-03-18 22:10:38,235 - ERROR - Failed to process webhook for subscription SUB-8821123381
+2025-03-18 22:10:38,235 - ERROR - Error processing webhook: 500: Failed to update card
+2025-03-18 22:45:09,745 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-18 22:45:09,745 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:45:09,745 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:52:13,353 - merchant_db_connector - INFO - [db-fa2bd9b3] Updating card with subscription ID SUB-8948925134
+2025-03-18 22:52:13,354 - merchant_db_connector - INFO - [db-fa2bd9b3] Attributes to update: {'expiry_date': '2029-01'}
+2025-03-18 22:52:13,354 - merchant_db_connector - INFO - [db-fa2bd9b3] Test mode: Simulating successful update for subscription ID SUB-8948925134
+2025-03-18 22:52:13,354 - merchant_db_connector - INFO - [db-fa2bd9b3] Successfully updated card with subscription ID SUB-8948925134
+2025-03-18 22:52:13,354 - merchant_db_connector - DEBUG - [db-fa2bd9b3] Returning mock card: {'id': 1, 'user_id': 1, 'card_type': 'VISA', 'card_number': '************1234', 'last_four': '1234', 'expiry_date': '2029-01', 'cardholder_name': 'Test User', 'is_default': 1, 'created_at': '2025-03-19T05:52:13.354216', 'subscription_id': 'SUB-8948925134'}
+2025-03-18 22:54:54,127 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-18 22:54:54,127 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:54:54,127 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:55:03,500 - merchant_db_connector - INFO - [db-adc3d4a9] Updating card with subscription ID SUB-8948925134
+2025-03-18 22:55:03,501 - merchant_db_connector - INFO - [db-adc3d4a9] Attributes to update: {'expiry_date': '2029-01'}
+2025-03-18 22:55:03,501 - merchant_db_connector - INFO - [db-adc3d4a9] Test mode: Simulating successful update for subscription ID SUB-8948925134
+2025-03-18 22:55:03,501 - merchant_db_connector - INFO - [db-adc3d4a9] Successfully updated card with subscription ID SUB-8948925134
+2025-03-18 22:55:03,501 - merchant_db_connector - DEBUG - [db-adc3d4a9] Returning mock card: {'id': 1, 'user_id': 1, 'card_type': 'VISA', 'card_number': '************1234', 'last_four': '1234', 'expiry_date': '2029-01', 'cardholder_name': 'Test User', 'is_default': 1, 'created_at': '2025-03-19T05:55:03.501127', 'subscription_id': 'SUB-8948925134'}
+2025-03-18 22:55:33,578 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-18 22:55:33,578 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:55:33,578 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:55:37,982 - merchant_db_connector - INFO - [db-fe206e1f] Updating card with subscription ID SUB-8948925134
+2025-03-18 22:55:37,982 - merchant_db_connector - INFO - [db-fe206e1f] Attributes to update: {'expiry_date': '2029-01'}
+2025-03-18 22:55:37,982 - merchant_db_connector - DEBUG - [db-fe206e1f] Attempting to connect to database at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 22:55:37,983 - merchant_db_connector - DEBUG - [db-fe206e1f] Successfully connected to database
+2025-03-18 22:55:37,983 - merchant_db_connector - DEBUG - [db-fe206e1f] Executing query: SELECT * FROM cards WHERE subscription_id = ? with params: (SUB-8948925134,)
+2025-03-18 22:55:37,984 - merchant_db_connector - DEBUG - [db-fe206e1f] Found card: {'id': 2, 'user_id': 2, 'card_type': 'AMEX', 'card_number': 'MzcxMjM0ODA2OTg3MDM0', 'last_four': '7034', 'expiry_date': '01/2024', 'cardholder_name': 'John Doe', 'is_default': 0, 'created_at': '2025-03-11 17:29:21', 'subscription_id': 'SUB-8948925134'}
+2025-03-18 22:55:37,984 - merchant_db_connector - DEBUG - [db-fe206e1f] Will update field 'expiry_date' to '2029-01'
+2025-03-18 22:55:37,984 - merchant_db_connector - DEBUG - [db-fe206e1f] Executing update query: UPDATE cards SET expiry_date = :expiry_date WHERE subscription_id = :subscription_id
+2025-03-18 22:55:37,984 - merchant_db_connector - DEBUG - [db-fe206e1f] Query parameters: {'subscription_id': 'SUB-8948925134', 'expiry_date': '2029-01'}
+2025-03-18 22:55:37,985 - merchant_db_connector - DEBUG - [db-fe206e1f] Update successful, 1 rows affected
+2025-03-18 22:55:37,986 - merchant_db_connector - DEBUG - [db-fe206e1f] Changes committed to database
+2025-03-18 22:55:37,986 - merchant_db_connector - DEBUG - [db-fe206e1f] Fetching updated card with query: SELECT * FROM cards WHERE subscription_id = ?
+2025-03-18 22:55:37,986 - merchant_db_connector - INFO - [db-fe206e1f] Successfully updated card with subscription ID SUB-8948925134
+2025-03-18 22:55:37,986 - merchant_db_connector - DEBUG - [db-fe206e1f] Updated card data: {'id': 2, 'user_id': 2, 'card_type': 'AMEX', 'card_number': '************MDM0', 'last_four': '7034', 'expiry_date': '2029-01', 'cardholder_name': 'John Doe', 'is_default': 0, 'created_at': '2025-03-11 17:29:21', 'subscription_id': 'SUB-8948925134'}
+2025-03-18 22:55:37,986 - merchant_db_connector - DEBUG - [db-fe206e1f] Database cursor closed
+2025-03-18 22:55:37,986 - merchant_db_connector - DEBUG - [db-fe206e1f] Database connection closed
+2025-03-18 23:22:57,835 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-18 23:22:57,835 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 23:22:57,835 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 23:30:09,957 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-18 23:30:09,958 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 23:30:09,958 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 23:31:04,682 - merchant_db_connector - INFO - [db-80990b86] Updating card with subscription ID SUB-3814981312
+2025-03-18 23:31:04,683 - merchant_db_connector - INFO - [db-80990b86] Attributes to update: {'expiry_date': '2029/01'}
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Attempting to connect to database at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Successfully connected to database
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Executing query: SELECT * FROM cards WHERE subscription_id = ? with params: (SUB-3814981312,)
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Found card: {'id': 3, 'user_id': 1, 'card_type': 'American Express', 'card_number': 'MzcxNDQ5NjM1Mzk4NDMx', 'last_four': '8431', 'expiry_date': '08/2025', 'cardholder_name': 'Jamie Lee', 'is_default': 1, 'created_at': '2025-03-19 04:32:27', 'subscription_id': 'SUB-3814981312'}
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Will update field 'expiry_date' to '2029/01'
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Executing update query: UPDATE cards SET expiry_date = :expiry_date WHERE subscription_id = :subscription_id
+2025-03-18 23:31:04,683 - merchant_db_connector - DEBUG - [db-80990b86] Query parameters: {'subscription_id': 'SUB-3814981312', 'expiry_date': '2029/01'}
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Update successful, 1 rows affected
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Changes committed to database
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Fetching updated card with query: SELECT * FROM cards WHERE subscription_id = ?
+2025-03-18 23:31:04,684 - merchant_db_connector - INFO - [db-80990b86] Successfully updated card with subscription ID SUB-3814981312
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Updated card data: {'id': 3, 'user_id': 1, 'card_type': 'American Express', 'card_number': '************NDMx', 'last_four': '8431', 'expiry_date': '2029/01', 'cardholder_name': 'Jamie Lee', 'is_default': 1, 'created_at': '2025-03-19 04:32:27', 'subscription_id': 'SUB-3814981312'}
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Database cursor closed
+2025-03-18 23:31:04,684 - merchant_db_connector - DEBUG - [db-80990b86] Database connection closed
+2025-03-19 23:46:11,797 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-19 23:46:11,797 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:46:11,797 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:48:12,668 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-19 23:48:12,669 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:48:12,669 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:50:41,117 - merchant_db_connector - INFO - [db-6636cf64] Updating card with subscription ID SUB-8948925134
+2025-03-19 23:50:41,118 - merchant_db_connector - INFO - [db-6636cf64] Attributes to update: {'expiry_date': '2029/01'}
+2025-03-19 23:50:41,118 - merchant_db_connector - DEBUG - [db-6636cf64] Attempting to connect to database at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:50:41,120 - merchant_db_connector - DEBUG - [db-6636cf64] Successfully connected to database
+2025-03-19 23:50:41,120 - merchant_db_connector - DEBUG - [db-6636cf64] Executing query: SELECT * FROM cards WHERE subscription_id = ? with params: (SUB-8948925134,)
+2025-03-19 23:50:41,122 - merchant_db_connector - DEBUG - [db-6636cf64] Found card: {'id': 2, 'user_id': 2, 'card_type': 'AMEX', 'card_number': 'MzcxMjM0ODA2OTg3MDM0', 'last_four': '7034', 'expiry_date': '01/2024', 'cardholder_name': 'John Doe', 'is_default': 0, 'created_at': '2025-03-11 17:29:21', 'subscription_id': 'SUB-8948925134'}
+2025-03-19 23:50:41,122 - merchant_db_connector - DEBUG - [db-6636cf64] Will update field 'expiry_date' to '2029/01'
+2025-03-19 23:50:41,122 - merchant_db_connector - DEBUG - [db-6636cf64] Executing update query: UPDATE cards SET expiry_date = :expiry_date WHERE subscription_id = :subscription_id
+2025-03-19 23:50:41,122 - merchant_db_connector - DEBUG - [db-6636cf64] Query parameters: {'subscription_id': 'SUB-8948925134', 'expiry_date': '2029/01'}
+2025-03-19 23:50:41,122 - merchant_db_connector - DEBUG - [db-6636cf64] Update successful, 1 rows affected
+2025-03-19 23:50:41,123 - merchant_db_connector - DEBUG - [db-6636cf64] Changes committed to database
+2025-03-19 23:50:41,123 - merchant_db_connector - DEBUG - [db-6636cf64] Fetching updated card with query: SELECT * FROM cards WHERE subscription_id = ?
+2025-03-19 23:50:41,123 - merchant_db_connector - INFO - [db-6636cf64] Successfully updated card with subscription ID SUB-8948925134
+2025-03-19 23:50:41,123 - merchant_db_connector - DEBUG - [db-6636cf64] Updated card data: {'id': 2, 'user_id': 2, 'card_type': 'AMEX', 'card_number': '************MDM0', 'last_four': '7034', 'expiry_date': '2029/01', 'cardholder_name': 'John Doe', 'is_default': 0, 'created_at': '2025-03-11 17:29:21', 'subscription_id': 'SUB-8948925134'}
+2025-03-19 23:50:41,123 - merchant_db_connector - DEBUG - [db-6636cf64] Database cursor closed
+2025-03-19 23:50:41,123 - merchant_db_connector - DEBUG - [db-6636cf64] Database connection closed
+2025-03-19 23:51:31,337 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-19 23:51:31,337 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:51:31,337 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:59:38,785 - merchant_db_connector - INFO - Merchant DB connector logs will be written to /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/card_subscriptions.log
+2025-03-19 23:59:38,785 - merchant_db_connector - INFO - Database path: /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-19 23:59:38,785 - merchant_db_connector - INFO - Database file found at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-20 00:00:31,104 - merchant_db_connector - INFO - [db-4b337035] Updating card with subscription ID SUB-3814981312
+2025-03-20 00:00:31,105 - merchant_db_connector - INFO - [db-4b337035] Attributes to update: {'expiry_date': '01/2029'}
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Attempting to connect to database at /Users/rishabhsharma/PycharmProjects/ecommerce-site/backend/instance/ecommerce.db
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Successfully connected to database
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Executing query: SELECT * FROM cards WHERE subscription_id = ? with params: (SUB-3814981312,)
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Found card: {'id': 3, 'user_id': 1, 'card_type': 'AMEX', 'card_number': 'MzcxNDQ5NjM1Mzk4NDMx', 'last_four': '8431', 'expiry_date': '08/2025', 'cardholder_name': 'Jamie Lee', 'is_default': 1, 'created_at': '2025-03-19 04:32:27', 'subscription_id': 'SUB-3814981312'}
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Will update field 'expiry_date' to '01/2029'
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Executing update query: UPDATE cards SET expiry_date = :expiry_date WHERE subscription_id = :subscription_id
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Query parameters: {'subscription_id': 'SUB-3814981312', 'expiry_date': '01/2029'}
+2025-03-20 00:00:31,105 - merchant_db_connector - DEBUG - [db-4b337035] Update successful, 1 rows affected
+2025-03-20 00:00:31,106 - merchant_db_connector - DEBUG - [db-4b337035] Changes committed to database
+2025-03-20 00:00:31,106 - merchant_db_connector - DEBUG - [db-4b337035] Fetching updated card with query: SELECT * FROM cards WHERE subscription_id = ?
+2025-03-20 00:00:31,106 - merchant_db_connector - INFO - [db-4b337035] Successfully updated card with subscription ID SUB-3814981312
+2025-03-20 00:00:31,106 - merchant_db_connector - DEBUG - [db-4b337035] Updated card data: {'id': 3, 'user_id': 1, 'card_type': 'AMEX', 'card_number': '************NDMx', 'last_four': '8431', 'expiry_date': '01/2029', 'cardholder_name': 'Jamie Lee', 'is_default': 1, 'created_at': '2025-03-19 04:32:27', 'subscription_id': 'SUB-3814981312'}
+2025-03-20 00:00:31,106 - merchant_db_connector - DEBUG - [db-4b337035] Database cursor closed
+2025-03-20 00:00:31,106 - merchant_db_connector - DEBUG - [db-4b337035] Database connection closed

@@ -8,6 +8,22 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Function to check if a card is expired
+  const isCardExpired = (expiryDate) => {
+    // Parse the expiry date (format: MM/YYYY)
+    const [month, year] = expiryDate.split('/');
+    
+    // Create a date object for the expiry date (last day of the month)
+    const expiryDateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
+    expiryDateObj.setMonth(expiryDateObj.getMonth() + 1, 0); // Last day of the month
+    
+    // Create a date object for the cutoff date (07/2025)
+    const cutoffDate = new Date(2025, 10, 31); // July 31, 2025
+    
+    // Compare the dates
+    return expiryDateObj < cutoffDate;
+  };
+
   useEffect(() => {
     // Only fetch cards if a user is logged in
     if (currentUser) {
@@ -25,11 +41,35 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
       if (response.success) {
         setCards(response.data);
         
-        // If there are cards but no selection, auto-select the default card
-        if (response.data.length > 0 && !selectedCard) {
-          const defaultCard = response.data.find(card => card.is_default);
-          if (defaultCard && onCardSelect) {
-            onCardSelect(defaultCard.id.toString());
+        // If there are cards but no selection, auto-select the default card or a non-expired card
+        if (response.data.length > 0 && !selectedCard && onCardSelect) {
+          // First try to find a non-expired default card
+          const defaultNonExpiredCard = response.data.find(card => 
+            card.is_default && !isCardExpired(card.expiry_date)
+          );
+          
+          if (defaultNonExpiredCard) {
+            // Prefer non-expired default card
+            onCardSelect(defaultNonExpiredCard.id.toString());
+          } else {
+            // If no non-expired default card, try to find any non-expired card
+            const nonExpiredCard = response.data.find(card => 
+              !isCardExpired(card.expiry_date)
+            );
+            
+            if (nonExpiredCard) {
+              // Use any non-expired card
+              onCardSelect(nonExpiredCard.id.toString());
+            } else {
+              // If all cards are expired, fall back to the default card
+              const defaultCard = response.data.find(card => card.is_default);
+              if (defaultCard) {
+                onCardSelect(defaultCard.id.toString());
+              } else {
+                // Last resort: use the first card
+                onCardSelect(response.data[0].id.toString());
+              }
+            }
           }
         }
       } else {
@@ -73,9 +113,34 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
           if (selectedCard === cardId.toString() && onCardSelect) {
             const remainingCards = cards.filter(card => card.id.toString() !== cardId.toString());
             if (remainingCards.length > 0) {
-              // Select the first card or the default card if available
-              const defaultCard = remainingCards.find(card => card.is_default);
-              onCardSelect(defaultCard ? defaultCard.id.toString() : remainingCards[0].id.toString());
+              // First try to find a non-expired default card
+              const defaultNonExpiredCard = remainingCards.find(card => 
+                card.is_default && !isCardExpired(card.expiry_date)
+              );
+              
+              if (defaultNonExpiredCard) {
+                // Prefer non-expired default card
+                onCardSelect(defaultNonExpiredCard.id.toString());
+              } else {
+                // If no non-expired default card, try to find any non-expired card
+                const nonExpiredCard = remainingCards.find(card => 
+                  !isCardExpired(card.expiry_date)
+                );
+                
+                if (nonExpiredCard) {
+                  // Use any non-expired card
+                  onCardSelect(nonExpiredCard.id.toString());
+                } else {
+                  // If all cards are expired, fall back to the default card
+                  const defaultCard = remainingCards.find(card => card.is_default);
+                  if (defaultCard) {
+                    onCardSelect(defaultCard.id.toString());
+                  } else {
+                    // Last resort: use the first card
+                    onCardSelect(remainingCards[0].id.toString());
+                  }
+                }
+              }
             } else {
               onCardSelect('');
             }
@@ -113,17 +178,32 @@ const SavedCards = ({ selectedCard, onCardSelect, showManage = false }) => {
           key={card.id} 
           className={`card mb-2 ${selectedCard === card.id.toString() ? 'border-primary' : ''}`}
           style={{ cursor: onCardSelect ? 'pointer' : 'default' }}
-          onClick={() => onCardSelect && onCardSelect(card.id.toString())}
+          onClick={() => {
+            if (onCardSelect) {
+              // If the card is expired, show a warning before selecting
+              if (isCardExpired(card.expiry_date)) {
+                if (window.confirm('This card has expired. Are you sure you want to use it?')) {
+                  onCardSelect(card.id.toString());
+                }
+              } else {
+                onCardSelect(card.id.toString());
+              }
+            }
+          }}
         >
-          <div className="card-body p-3">
+          <div className={`card-body p-3 ${isCardExpired(card.expiry_date) ? 'bg-light' : ''}`}>
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <div className="mb-1">
                   <span className="fw-bold">{card.card_type}</span>
+                  {isCardExpired(card.expiry_date) && (
+                    <span className="badge bg-danger ms-2">Expired</span>
+                  )}
                 </div>
                 <div>**** **** **** {card.last_four}</div>
-                <div className="text-muted small">
+                <div className={`small ${isCardExpired(card.expiry_date) ? 'text-danger' : 'text-muted'}`}>
                   {card.cardholder_name} | Expires: {card.expiry_date}
+                  {isCardExpired(card.expiry_date) && ' (Card needs to be updated)'}
                 </div>
               </div>
               

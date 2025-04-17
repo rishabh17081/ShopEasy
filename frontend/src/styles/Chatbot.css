@@ -1,0 +1,258 @@
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-container {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: slide-up 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Maximized chatbot styles */
+.chatbot-container.maximized {
+  width: 80%;
+  height: 80%;
+  max-width: 1000px;
+  max-height: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: auto;
+  right: auto;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.chatbot-toggle-btn:hover {
+  transform: scale(1.05);
+  background-color: #0069d9;
+}
+
+.chatbot-toggle-btn svg {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+.chatbot-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.chatbot-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.close-btn, .maximize-btn {
+  color: white;
+  padding: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover, .maximize-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f8f9fa;
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  word-break: break-word;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background-color: white;
+  color: #333;
+  border-bottom-left-radius: 0.3rem;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.empty-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6c757d;
+  text-align: center;
+}
+
+.tool-calls, .tool-results, .follow-up-response {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+}
+
+.tool-call, .tool-result {
+  margin-bottom: 0.5rem;
+}
+
+/* Chart result styles */
+.chart-result {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-result h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.result-chart {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Larger chart in maximized mode */
+.maximized .result-chart {
+  max-width: 500px;
+}
+
+.chart-insights {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.insight-summary {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.financial-insights {
+  background-color: rgba(0, 123, 255, 0.05);
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.financial-insights p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.tool-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}

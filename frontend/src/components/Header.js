@@ -35,6 +35,9 @@ const Header = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/chatbot">AI Assistant</Link>
+            </li>
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
